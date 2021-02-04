@@ -2,8 +2,8 @@ console.log("Hello world!");
 
 let battleSim = () => {
   // For testing purposes.
-  let player1 = 100;
-  let player2 = 50;
+  let player1 = Math.floor(Math.random() * 100) + 1;
+  let player2 = Math.floor(Math.random() * 100) + 1;
 
   while (player1 > 0 && player2 > 0) {
     player1--;
