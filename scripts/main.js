@@ -6,12 +6,12 @@ let battleSim = () => {
   // For testing purposes
   let player1Name = players[0].name;
   let player1Weapon = players[0].weapon;
-  let player2Name = "Ogre Bob";
-  let player2Weapon = "Machine Gun";
+  let player2Name = enemies[0].name;
+  let player2Weapon = enemies[0].weapon;
   let player1WeaponDamage = 12;
   let player2WeaponDamage = 10;
   let player1Hitpoints = players[0].hitPoints;
-  let player2Hitpoints = Math.floor(Math.random() * 25) + 1;
+  let player2Hitpoints = enemies[0].hitPoints;
   // let player2RandomMissfire = Math.random();
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
@@ -76,6 +76,15 @@ const players = [
   }
 ];
 
+// For testing purposes please don't remove.
+const enemies = [
+  {
+    name: "Ogre",
+    power: "stomp",
+    weapon: "Machine gun",
+    hitPoints: 40
+  }
+]
 // you can hard code the dropdown to include a value for each player in the players' array (static) or
 // you can iterate over the players array, generate HTML for each player, and inject that into the DOM (dynamic)
 
