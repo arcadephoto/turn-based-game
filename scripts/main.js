@@ -7,15 +7,16 @@ let battleSim = () => {
   let player1Name = players[0].name;
   let player1Weapon = players[0].weapon;
   let player2Name = enemies[0].name;
-  let player2Weapon = enemies[0].weapon;
+  // let player2Weapon = enemies[0].weapon;
   let player1WeaponDamage = 12;
-  let player2WeaponDamage = 10;
+  let player2WeaponDamage = enemies[0].weapon.machineGun;
   let player1Hitpoints = players[0].hitPoints;
   let player2Hitpoints = enemies[0].hitPoints;
   // let player2RandomMissfire = Math.random();
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
   console.log(`${player2Name} hit points: ${player2Hitpoints}`);
+  console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
   while (player1Hitpoints > 0 && player2Hitpoints > 0) {
     let player1randomMissfire = Math.random();
     let player2RandomMissfire = Math.random();
@@ -81,7 +82,8 @@ const enemies = [
   {
     name: "Ogre",
     power: "stomp",
-    weapon: "Machine gun",
+    // My idea for how to do wepons.
+    weapon: {machineGun: Math.round((Math.random() * 25) + 1)},
     hitPoints: 40
   }
 ]
