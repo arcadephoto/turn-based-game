@@ -1,20 +1,32 @@
-console.log("Hello world!");
+// console.log("Hello world!");
 
 let battleSim = () => {
-  // For testing purposes.
-  let player1 = Math.floor(Math.random() * 100) + 1;
-  let player2 = Math.floor(Math.random() * 100) + 1;
+  // For testing purposes
+  let player1Name = "Patrick";
+  let player1Weapon = "Laser";
+  let player2Name = "Ogre Bob";
+  let player2Weapon = "Machine Gun";
+  let player1Hitpoints = Math.floor(Math.random() * 100) + 1;
+  let player2Hitpoints = Math.floor(Math.random() * 100) + 1;
 
-  while (player1 > 0 && player2 > 0) {
-    player1--;
-    player2--;
-    console.log(`Player 1 hit points: ${player1}`);
-    console.log(`Player 2 hit points: ${player2}`);
+  while (player1Hitpoints > 0 && player2Hitpoints > 0) {
+    let randomMissfire = Math.random();
+    console.log(randomMissfire.toFixed(2));
+    if (randomMissfire > .5) {
+        console.log("Hit");
+        player1Hitpoints--;
+        player2Hitpoints--;
+        console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+        console.log(`${player2Name} hit points: ${player2Hitpoints}`);
+    } else {
+      console.log("Miss");
+    }
+
   }
-  if (player1 > 0) {
-    alert("Player 1 wins!");
+  if (player1Hitpoints > 0) {
+    alert(`${player1Name} won!`);
   } else {
-    alert("Player 2 wins!");
+    alert(`${player2Name} won!`);
   }
 };
 ///////////////////////////////////////////////CHARACTERS
