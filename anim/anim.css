@@ -1,0 +1,101 @@
+body {
+  background-image: url("landscape.jpg");
+  background-repeat: space;
+  background-position: center;
+}
+
+.battlefield {
+  height: 500px;
+}
+
+.container {
+  text-align: center;
+}
+
+.noFight {
+  margin-top: 300px;
+  color: transparent;
+  background-color: transparent;
+}
+
+.leftWeapon {
+  margin-top: 300px;
+  animation: fromLeft infinite 2.5s;
+}
+
+.rightWeapon {
+  animation: fromRight infinite 2.5s;
+}
+
+#ninjaStarRight {
+  background: lightgray;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-align: center;
+  transform: rotate(20deg);
+  box-shadow: 5px 5px 2px gray;
+}
+
+#ninjaStarRight:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  background: lightgray;
+  transform: rotate(135deg);
+}
+
+#ninjaStar {
+  background: lightgray;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-align: center;
+  transform: rotate(20deg);
+  box-shadow: 5px 5px 2px gray;
+}
+
+#ninjaStar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  background: lightgray;
+  transform: rotate(135deg);
+}
+
+@keyframes fromLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    /* transform: rotate(180deg); */
+    transform: translateX(100px);
+    transform: rotateZ(45deg);
+  }
+  100% {
+    /* transform: rotate(360deg); */
+    transform: translateX(2000px) rotate(720deg);
+  }
+}
+@keyframes fromRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    /* transform: rotate(180deg); */
+    transform: translateX(-100px);
+    transform: rotateZ(45deg);
+  }
+  100% {
+    /* transform: rotate(360deg); */
+    transform: translateX(-2000px) rotate(720deg);
+  }
+}
+
+/*# sourceMappingURL=anim.css.map */
