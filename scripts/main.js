@@ -31,7 +31,7 @@ let battleSim = () => {
 };
 ///////////////////////////////////////////////CHARACTERS
 
-function Character({name, power, weapon, hitpoints} = {}) {
+function Character({name, power, weapon, hitPoints} = {}) {
   this.name = name;
   this.power = power;
   this.weapon = weapon;
