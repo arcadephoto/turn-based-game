@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
 
-    <link rel="stylesheet" href="./styles/styles.css"
-    <meta charset="utf-8">
-    <title>Turn Based Game</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Bossfight!</title>
+  <link rel="stylesheet" href="./chars/chars.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="./anim/anim.css">
+</head>
 
-    <h1>Welcome to our turn-based game!</h1>
+<body>
 
 
-    <script src="./scripts/main.js"></script>
-  </body>
+  <div class="container">
+    <div class="row">
+
+
+
+      <div class="col-sm-2" id="leftBase">
+
+
+        <label for="heroes">Choose your hero!</label>
+
+        <select onchange="setHero()" name="heroes" id="heroes">
+          <option value=null></option>
+          <option value="knight">Knight</option>
+          <option value="wizard">Wizard</option>
+          <option value="cowboy">Cowboy</option>
+          <option value="fireman">Fireman</option>
+        </select>
+
+
+
+
+        <div class="card" style="width: 18rem;" id="herocard" hidden>
+          <img class="card-img-top" src="./anim/hero.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 id="heroName" class="card-title">Hero!</h5>
+            <p  class="card-text">A warrior for truth and peace.</p>
+            <a href="#" class="btn btn-primary">Does something</a>
+          </div>
+        </div>
+
+
+
+        <div class="leftWeapon" id="ninjaStar" hidden></div>
+      </div>
+
+      <div class="col-sm-8" id="battlefield">
+        <button type="button" class="btn btn-danger" onclick="doFight()">Fight!</button>
+        <button type="button" class="btn btn-warning" onclick="noFight()">Stop Fight!</button>
+      </div>
+
+
+
+      <div class="col-sm-2" id="rightBase">
+
+
+        <div class="card" style="width: 18rem;" id="villainCard">
+          <img class="card-img-top" src="./anim/monster.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 id="mName" class="charName card-title"></h5>
+            <p class="card-text">Pure evil. Says 'supposably.'</p>
+            <a href="#" class="btn btn-primary">Do something</a>
+          </div>
+</div>
+
+
+          <div class="rightWeapon" id="ninjaStarRight" hidden></div>
+
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <audio autoplay>
+    <source src="./anim/bell.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+  <script src="./scripts/bootstrap.bundle.min.js"></script>
+  <script src="./anim/anim.js"></script>
+  <script src="./chars/chars.js"></script>
+</body>
+
 </html>
