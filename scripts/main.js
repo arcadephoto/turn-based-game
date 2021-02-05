@@ -53,22 +53,27 @@ const players = [
     name: "wizard",
     power: "energy blast",
     weapon: "staff",
-    hitPoints: 1000,
+    hitPoints: 25,
   }, {
     name: "knight",
     power: "super swing",
     weapon: "sword",
-    hitPoints: 1100,
+    hitPoints: 30,
   }, {
     name: "lizard man",
     power: "tongue attack",
     weapon: "tongue",
-    hitPoints: 1050,
+    hitPoints: 20,
   }, {
     name: "cowboy",
     power: null,
     weapon: "revolver",
-    hitPoints: 1200,
+    hitPoints: 25,
+  }, {
+    name: "alien",
+    power: "probe",
+    weapon: "atomizer",
+    hitPoints: 30,
   }
 ];
 
