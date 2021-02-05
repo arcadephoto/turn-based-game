@@ -32,7 +32,7 @@ let battleSim = () => {
     }
 
   }
-  
+
   if (player1Hitpoints > 0) {
     alert(`${player1Name} won!`);
   } else {
@@ -55,8 +55,9 @@ function Enemy({ name, power, weapon, hitPoints } = {}) {
   this.hitPoints = hitPoints;
 }
 
-const characterOne = new Character("Wizard", "Energy Blast", "Staff", "1000");
-const characterTwo = new Character("Knight", "Super Swing", "Sword", "1100");
-const characterThree = new Character("");
+const characterOne = new Character("Wizard","Energy Blast","Staff","1000");
+const characterTwo = new Character("Knight","Super Swing","Sword","1100");
+const characterThree = new Character("Lizard Man","Tongue Attack","Tongue","1050");
+const characterFour = new Character("Cowboy","unknown","Revolver","1200");
 
 battleSim();
