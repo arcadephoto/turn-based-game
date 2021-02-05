@@ -4,14 +4,14 @@
 
 let battleSim = () => {
   // For testing purposes
-  let player1Name = "Patrick";
-  let player1Weapon = "Laser";
+  let player1Name = players[0].name;
+  let player1Weapon = players[0].weapon;
   let player2Name = "Ogre Bob";
   let player2Weapon = "Machine Gun";
   let player1WeaponDamage = 12;
   let player2WeaponDamage = 10;
-  let player1Hitpoints = Math.floor(Math.random() * 100) + 1;
-  let player2Hitpoints = Math.floor(Math.random() * 100) + 1;
+  let player1Hitpoints = players[0].hitPoints;
+  let player2Hitpoints = Math.floor(Math.random() * 25) + 1;
   // let player2RandomMissfire = Math.random();
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
