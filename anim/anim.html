@@ -14,8 +14,23 @@
 
   <div class="container">
     <div class="row">
+
+
+      
       <div class="col-sm-2" id="leftBase">
-        <div class="leftWeapon" id="ninjaStar"></div>
+
+        <div class="card" style="width: 18rem;" id="herocard">
+          <img class="card-img-top" src="hero.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Hero!</h5>
+            <p class="card-text">A warrior for truth and peace.</p>
+            <a href="#" class="btn btn-primary">Does something</a>
+          </div>
+        </div>
+
+
+
+        <div class="leftWeapon" id="ninjaStar" hidden></div>
       </div>
 
       <div class="col-sm-8" id="battlefield">
@@ -23,11 +38,31 @@
         <button type="button" class="btn btn-warning" onclick="noFight()">Stop Fight!</button>
       </div>
 
+
+
       <div class="col-sm-2" id="rightBase">
-        <div class="rightWeapon" id="ninjaStarRight"></div>
+
+
+        <div class="card" style="width: 18rem;" id="villainCard">
+          <img class="card-img-top" src="monster.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Evil Radioactive Face-Muncher!</h5>
+            <p class="card-text">Pure evil. Says 'supposably.'</p>
+            <a href="#" class="btn btn-primary">Do something</a>
+          </div>
+</div>
+
+
+          <div class="rightWeapon" id="ninjaStarRight" hidden></div>
+
+
+
+
       </div>
 
     </div>
+
+
   </div>
 
 
@@ -38,7 +73,10 @@
 
 
 
-
+  <audio autoplay>
+    <source src="./bell.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
   <script src="./anim.js"></script>
 </body>
 

@@ -23,11 +23,29 @@ body {
 }
 
 .leftWeapon {
-  animation: fromLeft infinite 2.5s;
+  animation: fromLeft infinite 3s;
 }
 
 .rightWeapon {
-  animation: fromRight infinite 2.5s;
+  animation: fromRight infinite 3s;
+}
+
+#herocard {
+  border: 2px solid blue;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  box-shadow: 5px 5px 5px gray;
+  animation: slide-right 3s;
+}
+
+#villainCard {
+  border: 2px solid black;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  box-shadow: 5px 5px 5px gray;
+  animation: slide-left 3s;
 }
 
 #ninjaStarRight {
@@ -79,11 +97,11 @@ body {
   50% {
     /* transform: rotate(180deg); */
     transform: translateX(100px);
-    transform: rotateZ(45deg);
+    transform: rotate3d(-1, -1, -1, 45deg);
   }
   100% {
     /* transform: rotate(360deg); */
-    transform: translateX(2000px) rotate(720deg);
+    transform: translateX(2000px) rotate(1080deg);
   }
 }
 @keyframes fromRight {
@@ -93,11 +111,48 @@ body {
   50% {
     /* transform: rotate(180deg); */
     transform: translateX(-100px);
-    transform: rotateZ(45deg);
+    transform: rotate3d(1, 1, 1, 45deg);
   }
   100% {
     /* transform: rotate(360deg); */
-    transform: translateX(-2000px) rotate(720deg);
+    transform: translateX(-2000px) rotate(1080deg);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
