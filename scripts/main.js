@@ -15,19 +15,22 @@ let battleSim = () => {
   // let player2RandomMissfire = Math.random();
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+  console.log(`${player2Name} hit points: ${player2Hitpoints}`);
   while (player1Hitpoints > 0 && player2Hitpoints > 0) {
     let player1randomMissfire = Math.random();
     let player2RandomMissfire = Math.random();
 
     console.log(player1randomMissfire.toFixed(2));
+
     if (player1randomMissfire > .5) {
       console.log(`${player1Name} hit`);
       player1Hitpoints-=player2WeaponDamage;
       console.log(`${player1Name} hit points: ${player1Hitpoints}`);
-    } else
+    } else {
       console.log(`${player1Name} hit points: ${player1Hitpoints}`);
       console.log(`${player1Name} missed!`);
     }
+
     if (player2RandomMissfire > .5) {
       player2Hitpoints-=player1WeaponDamage;
       console.log(`${player2Name} hit points: ${player2Hitpoints}`);
@@ -35,17 +38,13 @@ let battleSim = () => {
       console.log(`${player2Name} missed!`);
     }
   }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> Fixed a scope issue.
   if (player1Hitpoints > 0) {
     alert(`${player1Name} won!`);
   } else {
     alert(`${player2Name} won!`);
   }
-};
+}
+
 ///////////////////////////////////////////////CHARACTERS
 
 const players = [
