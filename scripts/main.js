@@ -38,7 +38,7 @@ function Character({name, power, weapon, hitPoints} = {}) {
   this.hitPoints = hitPoints;
 };
 
-  function Enemy ({name, power, weapon, hitpoints} = {}) {
+  function Enemy ({name, power, weapon, hitPoints} = {}) {
     this.name = name;
     this.power = power;
     this.weapon = weapon;
