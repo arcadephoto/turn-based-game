@@ -4,22 +4,25 @@ body {
   background-position: center;
 }
 
-.battlefield {
-  height: 500px;
+#leftBase {
+  padding-top: 200px;
 }
 
-.container {
+#battlefield {
   text-align: center;
+  padding-top: 50%;
+}
+
+#rightBase {
+  padding-top: 400px;
 }
 
 .noFight {
-  margin-top: 300px;
   color: transparent;
   background-color: transparent;
 }
 
 .leftWeapon {
-  margin-top: 300px;
   animation: fromLeft infinite 2.5s;
 }
 

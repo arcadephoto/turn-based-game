@@ -1,4 +1,3 @@
-console.log("Hello");
 
 let leftAttack = document.getElementById("ninjaStar");
 function doFight(){
