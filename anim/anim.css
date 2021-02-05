@@ -1,5 +1,5 @@
 body {
-  background-image: url("landscape.jpg");
+  background-image: url("./landscape.jpg");
   background-repeat: space;
   background-position: center;
 }
