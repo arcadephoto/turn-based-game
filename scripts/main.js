@@ -16,6 +16,29 @@ let battleSim = () => {
   } else {
     alert("Player 2 wins!");
   }
-}
+};
+///////////////////////////////////////////////CHARACTERS
+
+function Character({name, power, weapon, hitpoints} = {}) {
+  this.name = name;
+  this.power = power;
+  this.weapon = weapon;
+  this.hitPoints = hitPoints;
+};
+
+  function Enemy ({name, power, weapon, hitpoints} = {}) {
+    this.name = name;
+    this.power = power;
+    this.weapon = weapon;
+    this.hitPoints = hitPoints;
+  };
+
+const characterOne = new Character("Wizard","Energy Blast","Staff","1000");
+const characterTwo = new Character("Knight","Super Swing","Sword","1100");
+const characterThree = new Character("")
+
+
+
+
 
 battleSim();
