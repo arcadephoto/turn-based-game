@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+const button = document.querySelector(".test-run");
 
 let battleSim = () => {
   // For testing purposes
@@ -45,7 +46,7 @@ let battleSim = () => {
     alert(`${player2Name} won!`);
   }
 }
-
+button.addEventListener("click", () => battleSim());
 ///////////////////////////////////////////////CHARACTERS
 
 const players = [
