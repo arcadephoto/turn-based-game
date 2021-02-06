@@ -1,7 +1,164 @@
 body{
-  background-color: blue;
   box-sizing: border-box;
+  background-image: url("../anim/landscape.jpg");
+  background-repeat: space;
+  background-position: center;
 }
+
 .properName{
   text-transform: capitalize;
 }
+
+#leftBase {
+  padding-top: 200px;
+}
+
+#battlefield {
+  text-align: center;
+  padding-top: 50%;
+}
+
+#rightBase {
+  padding-top: 400px;
+}
+
+.noFight {
+  color: transparent;
+  background-color: transparent;
+}
+
+.leftWeapon {
+  animation: fromLeft infinite 3s;
+}
+
+.rightWeapon {
+  animation: fromRight infinite 3s;
+}
+
+#herocard {
+  border: 2px solid blue;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  box-shadow: 5px 5px 5px gray;
+  animation: slide-right 3s;
+}
+
+#villainCard {
+  border: 2px solid black;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  box-shadow: 5px 5px 5px gray;
+  animation: slide-left 3s;
+}
+
+#ninjaStarRight {
+  background: lightgray;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-align: center;
+  transform: rotate(20deg);
+  box-shadow: 5px 5px 2px gray;
+}
+
+#ninjaStarRight:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  background: lightgray;
+  transform: rotate(135deg);
+}
+
+#ninjaStar {
+  background: lightgray;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-align: center;
+  transform: rotate(20deg);
+  box-shadow: 5px 5px 2px gray;
+}
+
+#ninjaStar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 80px;
+  background: lightgray;
+  transform: rotate(135deg);
+}
+
+@keyframes fromLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    /* transform: rotate(180deg); */
+    transform: translateX(100px);
+    transform: rotate3d(-1, -1, -1, 45deg);
+  }
+  100% {
+    /* transform: rotate(360deg); */
+    transform: translateX(2000px) rotate(1080deg);
+  }
+}
+@keyframes fromRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    /* transform: rotate(180deg); */
+    transform: translateX(-100px);
+    transform: rotate3d(1, 1, 1, 45deg);
+  }
+  100% {
+    /* transform: rotate(360deg); */
+    transform: translateX(-2000px) rotate(1080deg);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=anim.css.map */

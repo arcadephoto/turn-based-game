@@ -3,6 +3,7 @@ let charWeapon;
 let charAttack;
 let charHit;
 let charDam;
+let charPhoto;
 
 
 
@@ -26,19 +27,6 @@ function makeMonster() {
   document.getElementById('mName').innerHTML = `${mName}`;
 }
 
-// function setHero() {
-//   let h = document.getElementById('heroes').value;
-//   console.log(h)
-//   if (h === "knight"){
-//     charName = knight.name;
-//     charWeapon = knight.weapon;
-//     charPower = knight.attack;
-//     charHit = knight.hitPoints;
-//     charDam = knight.damage;
-//     document.getElementById('heroName').innerHTML = `Hero: ${charName}`;
-//     document.getElementById('heroWeap').innerHTML = `Weapon: ${charWeapon}`;
-//     document.getElementById('herocard').hidden = false;
-//   }
 
 function getHero() {
   let h = document.getElementById('heroes').value;
@@ -51,22 +39,20 @@ for (i=0; i<num; i++) {
     charWeapon = players[i].weapon;
     charPower = players[i].power;
     charHit = players[i].hitPoints;
+    charPhoto = players[i].photo;
   }
 }
 setHero();
 };
 
 function setHero(){
-  document.getElementById('heroName').innerHTML = `HERO: ${charName}`;
-  document.getElementById('heroWeap').innerHTML = `WEAPON: ${charWeapon}`.toUpperCase();
-  document.getElementById('heroHit').innerHTML = `HIT POINTS: ${charHit}`;
+  document.getElementById('heroName').innerHTML = `Hero: ${charName}`;
+  document.getElementById('heroWeap').innerHTML = `Weapon: ${charWeapon}`;
+  document.getElementById('heroHit').innerHTML = `Health: ${charHit}`;
+  document.getElementById('herophoto').src = `./assets/${charPhoto}`
   document.getElementById('herocard').hidden = false;
   document.getElementById('heroDrop').hidden = true;
 }
-
-
-
-
 
 
 const size = [
@@ -122,25 +108,30 @@ const players = [
     power: "Energy Blast",
     weapon: "staff",
     hitPoints: 25,
+    photo: "wizard.jpg",
   }, {
     name: "Knight",
     power: "Super Swing",
     weapon: "sword",
     hitPoints: 30,
+    photo: "knight.png",
   }, {
     name: "Lizard Man",
     power: "tongue attack",
     weapon: "tongue",
     hitPoints: 20,
+    photo: "lizardman.png",
   }, {
     name: "Cowboy",
     power: "Scatter Gun",
     weapon: "revolver",
     hitPoints: 25,
+    photo: "cowboy.png",
   }, {
     name: "Alien",
     power: "Probe",
     weapon: "atomizer",
     hitPoints: 30,
+    photo: "alien.png",
   }
 ];

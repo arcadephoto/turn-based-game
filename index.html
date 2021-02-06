@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <title>Bossfight!</title>
   <link rel="stylesheet" href="./chars/chars.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="./anim/anim.css">
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
@@ -36,11 +36,12 @@
 
 
         <div class="card" style="width: 18rem;" id="herocard" hidden>
-          <img class="card-img-top" src="./anim/hero.png" alt="Card image cap">
+          <img id="herophoto" class="card-img-top" src="./assets/hero.png" alt="Card image cap">
           <div class="card-body">
             <h5 id="heroName" class="card-title"></h5>
-            <p  id="heroWeap" class="card-text"></p>
+            <p  id="heroWeap" class="properName" class="card-text"></p>
             <p id="heroHit" class="card-text"></p>
+            <a href="#" class="btn btn-primary">Attack!</a>
           </div>
         </div>
 
@@ -60,11 +61,11 @@
 
 
         <div class="card" style="width: 18rem;" id="villainCard">
-          <img class="card-img-top" src="./anim/monster.png" alt="Card image cap">
+          <img class="card-img-top" src="./assets/monster.png" alt="Card image cap">
           <div class="card-body">
             <h5 id="mName" class="charName card-title"></h5>
-            <p class="card-text">Pure evil. Says 'supposably.'</p>
-            <a href="#" class="btn btn-primary test-run">Do something</a>
+            <p class="card-text">Attack:</p>
+            <p class="card-text">Health:</p>
           </div>
 </div>
 
@@ -90,13 +91,13 @@
 
 
   <audio autoplay>
-    <source src="./anim/bell.mp3" type="audio/mpeg">
+    <source src="./assets/bell.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
   </audio>
+  <script src="./scripts/main.js"></script>
   <script src="./scripts/bootstrap.bundle.min.js"></script>
   <script src="./anim/anim.js"></script>
   <script src="./chars/chars.js"></script>
-  <script src="./scripts/main.js"></script>
 </body>
 
 </html>

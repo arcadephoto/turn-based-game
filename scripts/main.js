@@ -1,5 +1,5 @@
-(function() {
-  'use strict';
+// (function() {
+//   'use strict';
 
 const button = document.querySelector(".test-run");
 
@@ -49,34 +49,39 @@ let battleSim = () => {
 button.addEventListener("click", () => battleSim());
 ///////////////////////////////////////////////CHARACTERS
 
-const players = [
-  {
-    name: "wizard",
-    power: "energy blast",
-    weapon: "staff",
-    hitPoints: 25,
-  }, {
-    name: "knight",
-    power: "super swing",
-    weapon: "sword",
-    hitPoints: 30,
-  }, {
-    name: "lizard man",
-    power: "tongue attack",
-    weapon: "tongue",
-    hitPoints: 20,
-  }, {
-    name: "cowboy",
-    power: "scatter gun",
-    weapon: "revolver",
-    hitPoints: 25,
-  }, {
-    name: "alien",
-    power: "probe",
-    weapon: "atomizer",
-    hitPoints: 30,
-  }
-];
+// const players = [
+//   {
+//     name: "Wizard",
+//     power: "Energy Blast",
+//     weapon: "staff",
+//     hitPoints: 25,
+//     photo: "wizard.jpg",
+//   }, {
+//     name: "Knight",
+//     power: "Super Swing",
+//     weapon: "sword",
+//     hitPoints: 30,
+//     photo: "knight.png",
+//   }, {
+//     name: "Lizard Man",
+//     power: "tongue attack",
+//     weapon: "tongue",
+//     hitPoints: 20,
+//     photo: "lizardman.png",
+//   }, {
+//     name: "Cowboy",
+//     power: "Scatter Gun",
+//     weapon: "revolver",
+//     hitPoints: 25,
+//     photo: "cowboy.png",
+//   }, {
+//     name: "Alien",
+//     power: "Probe",
+//     weapon: "atomizer",
+//     hitPoints: 30,
+//     photo: "alien.png",
+//   }
+// ];
 
 // For testing purposes please don't remove.
 const enemies = [
@@ -120,5 +125,40 @@ function Enemy({ name, power, weapon, hitPoints } = {}) {
 // const characterThree = new Character("Lizard Man","Tongue Attack","Tongue","1050");
 // const characterFour = new Character("Cowboy","unknown","Revolver","1200");
 
+
+
+
+
+// const players = [
+//   {
+//     name: "Wizard",
+//     power: "Energy Blast",
+//     weapon: "staff",
+//     hitPoints: 25,
+//   }, {
+//     name: "Knight",
+//     power: "Super Swing",
+//     weapon: "sword",
+//     hitPoints: 30,
+//   }, {
+//     name: "Lizard Man",
+//     power: "tongue attack",
+//     weapon: "tongue",
+//     hitPoints: 20,
+//   }, {
+//     name: "Cowboy",
+//     power: "Scatter Gun",
+//     weapon: "revolver",
+//     hitPoints: 25,
+//   }, {
+//     name: "Alien",
+//     power: "Probe",
+//     weapon: "atomizer",
+//     hitPoints: 30,
+//   }
+// ];
+
+
+
 // battleSim();
-})();
+// })();
