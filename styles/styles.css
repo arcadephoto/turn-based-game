@@ -2,3 +2,6 @@ body{
   background-color: blue;
   box-sizing: border-box;
 }
+.properName{
+  text-transform: capitalize;
+}

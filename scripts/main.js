@@ -66,7 +66,7 @@ const players = [
     hitPoints: 20,
   }, {
     name: "cowboy",
-    power: null,
+    power: "scatter gun",
     weapon: "revolver",
     hitPoints: 25,
   }, {
@@ -119,5 +119,5 @@ function Enemy({ name, power, weapon, hitPoints } = {}) {
 // const characterThree = new Character("Lizard Man","Tongue Attack","Tongue","1050");
 // const characterFour = new Character("Cowboy","unknown","Revolver","1200");
 
-battleSim();
+// battleSim();
 })();
