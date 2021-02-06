@@ -83,7 +83,7 @@ const enemies = [
     name: "Ogre",
     power: "stomp",
     // My idea for how to do wepons.
-    weapon: {machineGun: Math.round((Math.random() * 25) + 1)},
+    weapon: {machineGun: Math.round((Math.random() * 26) + 10)},
     hitPoints: 40
   }
 ]
