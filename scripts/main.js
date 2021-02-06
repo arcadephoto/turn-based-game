@@ -2,6 +2,8 @@
 //   'use strict';
 
 const button = document.querySelector(".test-run");
+var snd = new Audio("./assets/bell.mp3");
+let leftAttack = document.getElementById("ninjaStar");
 
 let battleSim = () => {
   // For testing purposes
@@ -14,6 +16,7 @@ let battleSim = () => {
   let player1Hitpoints = players[0].hitPoints;
   let player2Hitpoints = enemies[0].hitPoints;
   // let player2RandomMissfire = Math.random();
+
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
   console.log(`${player2Name} hit points: ${player2Hitpoints}`);
@@ -46,7 +49,26 @@ let battleSim = () => {
     alert(`${player2Name} won!`);
   }
 }
-button.addEventListener("click", () => battleSim());
+document.getElementById('attackbtn').addEventListener("click", () => battleSim());
+
+
+
+
+function doFight(){
+  leftAttack.setAttribute('class', 'leftWeapon');
+  document.getElementById('ninjaStar').hidden = false;
+  document.body.style.background = "url('./assets/landfight.jpg') center";
+  document.getElementById('ninjaStarRight').hidden = false;
+  document.getElementById('herocard').hidden = false;
+  snd.play();
+}
+
+function noFight(){
+  leftAttack.setAttribute('class', 'noFight');
+  document.getElementById('ninjaStar').hidden = true;
+  document.getElementById('ninjaStarRight').hidden = true;
+  document.body.style.background = "url('./assets/landscape.jpg') center";
+}
 ///////////////////////////////////////////////CHARACTERS
 
 // const players = [
@@ -128,35 +150,6 @@ function Enemy({ name, power, weapon, hitPoints } = {}) {
 
 
 
-
-// const players = [
-//   {
-//     name: "Wizard",
-//     power: "Energy Blast",
-//     weapon: "staff",
-//     hitPoints: 25,
-//   }, {
-//     name: "Knight",
-//     power: "Super Swing",
-//     weapon: "sword",
-//     hitPoints: 30,
-//   }, {
-//     name: "Lizard Man",
-//     power: "tongue attack",
-//     weapon: "tongue",
-//     hitPoints: 20,
-//   }, {
-//     name: "Cowboy",
-//     power: "Scatter Gun",
-//     weapon: "revolver",
-//     hitPoints: 25,
-//   }, {
-//     name: "Alien",
-//     power: "Probe",
-//     weapon: "atomizer",
-//     hitPoints: 30,
-//   }
-// ];
 
 
 
