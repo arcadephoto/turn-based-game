@@ -4,7 +4,7 @@ let charAttack;
 let charHit;
 let charDam;
 let charPhoto;
-
+var punchAudio = new Audio('./assets/punch.mp3');
 
 
 
@@ -171,9 +171,16 @@ function heroAttack(){
   document.getElementById('herocard').classList.add("hAttAnim");
   document.getElementById('herocard').classList.remove("cardIntro");
   document.getElementById('villainCard').classList.remove("vAttAnim");
-  setInterval(monsterAttack, 2000);
+  setTimeout(punchSound, 700);
+  setTimeout(monsterAttack, 2000);
 }
 function monsterAttack(){
+  document.getElementById('villainCard').classList.remove("villainIntro");
   document.getElementById('herocard').classList.remove("hAttAnim");
   document.getElementById('villainCard').classList.add("vAttAnim");
+  setTimeout(punchSound, 700);
+}
+function punchSound() {
+  punchAudio.loop = false;
+punchAudio.play();
 }

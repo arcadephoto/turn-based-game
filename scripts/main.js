@@ -79,8 +79,8 @@ let battleSim = () => {
     alert(`${player2Name} won!`);
   }
 }
-// document.getElementById('attackbtn').addEventListener("click", () => battleSim());
-
+document.getElementById('pointer').addEventListener("click", () => battleSim());
+//I pointed this event listener to a null object for testing the attack buttons - Chad
 
 
 
