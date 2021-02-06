@@ -48,7 +48,8 @@ setHero();
 function setHero(){
   document.getElementById('heroName').innerHTML = `Hero: ${charName}`;
   document.getElementById('heroWeap').innerHTML = `Weapon: ${charWeapon}`;
-  document.getElementById('heroHit').innerHTML = `Health: ${charHit}`;
+  // This is all I was talking about.
+  document.getElementById('heroHit').innerHTML = `Health: <span id="charHit">${charHit}</span>`;
   document.getElementById('herophoto').src = `./assets/${charPhoto}`
   document.getElementById('herocard').hidden = false;
   document.getElementById('heroDrop').hidden = true;
