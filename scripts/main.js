@@ -18,6 +18,30 @@ let battleSim = () => {
   // let player2RandomMissfire = Math.random();
 
 
+
+  function heroLoseHealth() {
+    let damage = document.getElementById('health')
+    let width = 100;
+    damage.width -= ""; ///////??????
+
+    if (damage) {
+      damage.style.width = width + '%';
+      damage.innerHTML = width - 1 + 'hp';
+    }
+  }
+
+  function enemyLoseHealth() {
+    let damage = document.getElementById('health')
+    let width = 100;
+    damage.width -= ""; ///////??????
+
+    if (damage) {
+      damage.style.width = width + '%';
+      damage.innerHTML = width - 1 + 'hp';
+    }
+  }
+
+
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
   console.log(`${player2Name} hit points: ${player2Hitpoints}`);
   console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
