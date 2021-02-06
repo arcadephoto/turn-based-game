@@ -3,7 +3,7 @@
 
 const button = document.querySelector(".test-run");
 var snd = new Audio("./assets/bell.mp3");
-let leftAttack = document.getElementById("ninjaStar");
+// let leftAttack = document.getElementById("ninjaStar");
 
 let battleSim = () => {
   let damage = document.getElementById("charHit");
@@ -84,18 +84,18 @@ document.getElementById('attackbtn').addEventListener("click", () => battleSim()
 
 
 function doFight(){
-  leftAttack.setAttribute('class', 'leftWeapon');
-  document.getElementById('ninjaStar').hidden = false;
+  // leftAttack.setAttribute('class', 'leftWeapon');
+  // document.getElementById('ninjaStar').hidden = false;
   document.body.style.background = "url('./assets/landfight.jpg') center";
-  document.getElementById('ninjaStarRight').hidden = false;
+  // document.getElementById('ninjaStarRight').hidden = false;
   document.getElementById('herocard').hidden = false;
   snd.play();
 }
 
 function noFight(){
-  leftAttack.setAttribute('class', 'noFight');
-  document.getElementById('ninjaStar').hidden = true;
-  document.getElementById('ninjaStarRight').hidden = true;
+  // leftAttack.setAttribute('class', 'noFight');
+  // document.getElementById('ninjaStar').hidden = true;
+  // document.getElementById('ninjaStarRight').hidden = true;
   document.body.style.background = "url('./assets/landscape.jpg') center";
 }
 ///////////////////////////////////////////////CHARACTERS

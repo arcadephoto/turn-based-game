@@ -62,6 +62,8 @@ const size = [
   "gargauntuan",
   "humongous",
   "towering",
+  "corpulent",
+  "gigantic",
 
 ];
 
@@ -70,9 +72,19 @@ const descriptor = [
   "mutated",
   "iradiated",
   "slobbering",
-  "cannibalistic",
+  "wart-covered",
+  "bulbous",
   "hideous",
   "drooling",
+  "terrifying",
+  "terrible",
+  "grotesque",
+  "slimy",
+  "oozing",
+  "sweaty",
+  "pustulent",
+  "hairy",
+  "malodorous",
 
 ];
 
@@ -83,6 +95,12 @@ const descriptor2 = [
   "bloodthirsty",
   "maniacal",
   "gelatinous",
+  "lactose-intolerant",
+  "ill-tempered",
+  "malevolent",
+  "evil",
+  "cannibalistic",
+  "blood-sucking",
 
 ];
 
@@ -99,8 +117,21 @@ const monsterType = [
   "ghoul",
   "phantom",
   "chupacabra",
-
+  "zombie",
+  "goblin",
+  "homonculus",
+  "sludge-monster",
+  "vampire",
+  "drop-bear",
+  "kraken",
+  "mummy",
+  "abominable snowman",
+  "gorilla",
+  "housecat",
 ];
+
+
+
 makeMonster();
 
 const players = [
@@ -136,3 +167,13 @@ const players = [
     photo: "alien.png",
   }
 ];
+function heroAttack(){
+  document.getElementById('herocard').classList.add("hAttAnim");
+  document.getElementById('herocard').classList.remove("cardIntro");
+  document.getElementById('villainCard').classList.remove("vAttAnim");
+  setInterval(monsterAttack, 2000);
+}
+function monsterAttack(){
+  document.getElementById('herocard').classList.remove("hAttAnim");
+  document.getElementById('villainCard').classList.add("vAttAnim");
+}
