@@ -6,6 +6,7 @@ let charDam;
 let charPhoto;
 let monPhoto;
 let mWeapon;
+let mName;
 var punchAudio = new Audio('./assets/punch.mp3');
 
 
@@ -14,11 +15,19 @@ function getRand(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+// the mm() function first measures the length of the chosen array, then generates
+// a random number from 0 to the length of the array. it returns array(n), which
+// is a randomly chosen object inside the array.
+
 function mm(array) {
   let v = array.length;
   let n = getRand(0, v);
   return array[n];
 }
+
+//makeMonster() generates a random result from each of four arrays - size,
+//physical descriptor, monstrous descriptor and monster type - then combines
+//all four into a randomly generate monster, unique to each game.
 
 function makeMonster() {
   s = mm(size);
@@ -26,41 +35,41 @@ function makeMonster() {
   d2 = mm(descriptor2);
   mt = mm(monsterType);
   mw = mm(monWeapon);
-  mName = `${s}, ${d1}, ${d2} ${mt}`
+  mName = `${s}, ${d1}, ${d2} ${mt}`;
   document.getElementById('mName').innerHTML = `${mName}`;
   document.getElementById('mWeapName').innerHTML = `Attack: ${mw}`;
   // document.getElementById('enemyHit').innerHTML = `Hit Points: ${player2Hitpoints}`;
   n = getRand(1, 5);
-  monPhoto = `./assets/monster${n}.jpg`
-document.getElementById('vilPhoto').src = `${monPhoto}`;
+  monPhoto = `./assets/monster${n}.jpg`;
+  document.getElementById('vilPhoto').src = `${monPhoto}`;
 }
 
 
 
 function getHero() {
   let h = document.getElementById('heroes').value;
-  console.log(h)
+  console.log(h);
   let num = players.length;
-for (i=0; i<num; i++) {
-  if (h == players[i].name){
-    console.log('Match!');
-    charName = players[i].name;
-    charWeapon = players[i].weapon;
-    charPower = players[i].power;
-    charHit = players[i].hitPoints;
-    charPhoto = players[i].photo;
+  for (i = 0; i < num; i++) {
+    if (h == players[i].name) {
+      console.log('Match!');
+      charName = players[i].name;
+      charWeapon = players[i].weapon;
+      charPower = players[i].power;
+      charHit = players[i].hitPoints;
+      charPhoto = players[i].photo;
+    }
   }
-}
-setHero();
-doFight();
+  setHero();
+  doFight();
 };
 
-function setHero(){
+function setHero() {
   document.getElementById('heroName').innerHTML = `Hero: ${charName}`;
   document.getElementById('heroWeap').innerHTML = `Weapon: ${charWeapon}`;
   // This is all I was talking about.
   document.getElementById('heroHit').innerHTML = `Health: <span id="charHit">${charHit}</span>`;
-  document.getElementById('herophoto').src = `./assets/${charPhoto}`
+  document.getElementById('herophoto').src = `./assets/${charPhoto}`;
   document.getElementById('herocard').hidden = false;
   document.getElementById('heroDrop').hidden = true;
 }
@@ -74,7 +83,6 @@ const size = [
   "towering",
   "corpulent",
   "gigantic",
-
 ];
 
 
@@ -143,63 +151,67 @@ const monsterType = [
 
 const monWeapon = [
 
-"claws",
-"laser eyes",
-"fangs",
-"unconstructive criticism",
-"antique bayonet",
-"dull knife",
-"pointy stick",
-"sharp knife",
-"ball peen hammer",
-"x-acto knife",
-"Freddy Kreuger claws",
-"battle axe",
-"brass knuckles",
-"dogs with bees in their mouths",
-"flamethrower",
-"acid breath",
-"poison darts",
+  "claws",
+  "laser eyes",
+  "fangs",
+  "unconstructive criticism",
+  "antique bayonet",
+  "dull knife",
+  "pointy stick",
+  "sharp knife",
+  "ball peen hammer",
+  "x-acto knife",
+  "Freddy Kreuger claws",
+  "battle axe",
+  "brass knuckles",
+  "dogs with bees in their mouths",
+  "flamethrower",
+  "acid breath",
+  "poison darts",
 
 ]
 
 
 makeMonster();
 
-const players = [
-  {
-    name: "Wizard",
-    power: "Energy Blast",
-    weapon: "staff",
-    hitPoints: 25,
-    photo: "wizard.jpg",
-  }, {
-    name: "Knight",
-    power: "Super Swing",
-    weapon: "sword",
-    hitPoints: 30,
-    photo: "knight.png",
-  }, {
-    name: "Lizard Man",
-    power: "tongue attack",
-    weapon: "tongue",
-    hitPoints: 20,
-    photo: "lizardman.png",
-  }, {
-    name: "Cowboy",
-    power: "Scatter Gun",
-    weapon: "revolver",
-    hitPoints: 25,
-    photo: "cowboy.png",
-  }, {
-    name: "Alien",
-    power: "Probe",
-    weapon: "atomizer",
-    hitPoints: 30,
-    photo: "alien.png",
-  }
-];
-function heroAttack(){
+const players = [{
+  name: "Wizard",
+  power: "Energy Blast",
+  weapon: "staff",
+  hitPoints: 25,
+  photo: "wizard.jpg",
+}, {
+  name: "Knight",
+  power: "Super Swing",
+  weapon: "sword",
+  hitPoints: 30,
+  photo: "knight.png",
+}, {
+  name: "Lizard Man",
+  power: "tongue attack",
+  weapon: "tongue",
+  hitPoints: 20,
+  photo: "lizardman.png",
+}, {
+  name: "Cowboy",
+  power: "Scatter Gun",
+  weapon: "revolver",
+  hitPoints: 25,
+  photo: "cowboy.png",
+}, {
+  name: "Alien",
+  power: "Probe",
+  weapon: "atomizer",
+  hitPoints: 30,
+  photo: "alien.png",
+}];
+
+//these are the functions for the fight animation. heroAttack begins when the
+//player presses the "Attack". The heroAttack function then triggers the monsterAttack
+//function. Each animation plays only once.
+
+
+function heroAttack() {
   document.getElementById('herocard').classList.add("hAttAnim");
   document.getElementById('herocard').classList.remove("cardIntro");
   document.getElementById('villainCard').classList.remove("vAttAnim");
@@ -207,13 +219,15 @@ function heroAttack(){
   setTimeout(monsterAttack, 2000);
   battleSim();
 }
-function monsterAttack(){
+
+function monsterAttack() {
   document.getElementById('villainCard').classList.remove("villainIntro");
   document.getElementById('herocard').classList.remove("hAttAnim");
   document.getElementById('villainCard').classList.add("vAttAnim");
   setTimeout(punchSound, 700);
 }
+
 function punchSound() {
   punchAudio.loop = false;
-punchAudio.play();
+  punchAudio.play();
 }

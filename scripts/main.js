@@ -13,8 +13,10 @@ let battleSim = () => {
   let player1Weapon = players[0].weapon;
   let player2Name = enemies[0].name;
   // let player2Weapon = enemies[0].weapon;
-  let player1WeaponDamage = (Math.round(Math.random() * 10) + 1);
-  let player2WeaponDamage = (Math.round(Math.random() * 10) + 1);
+  let player1WeaponDamage = 2;
+  let player2WeaponDamage = 2;
+  // let player1WeaponDamage = (Math.round(Math.random() * 10) + 1);
+  // let player2WeaponDamage = (Math.round(Math.random() * 10) + 1);
   let player1Hitpoints = parseInt(damage.innerHTML);
   let player2Hitpoints = enemies[0].hitPoints;
   // let player2RandomMissfire = Math.random();
@@ -24,9 +26,9 @@ let battleSim = () => {
   function heroLoseHealth() {
     let healthBar = document.getElementById('heroHealthBar')
     let health = player1Hitpoints;
-    percent = (health / 100);
-    width = (percent * 200);
-    healthBar.style.width = `${width}px`; ///////??????
+    let percent = (health / 100);
+    let width = (percent * 200);
+    healthBar.style.width = `${width}px`;
 }
 //Health bar works, just needs to be tied into battle damage code
 
@@ -34,35 +36,11 @@ let battleSim = () => {
 function enemyLoseHealth() {
   let mHealthBar = document.getElementById('mHealthBar')
   let mHealth = player2Hitpoints;
-  mPercent = (mHealth / 100);
-  mWidth = (mPercent * 200);
-  mHealthBar.style.width = `${mWidth}px`; ///////??????
+  let mPercent = (mHealth / 100);
+  let mWidth = (mPercent * 200);
+  mHealthBar.style.width = `${mWidth}px`;
 }
 
-
-
-
-  // function heroLoseHealth() {
-  //   let damage = document.getElementById('health')
-  //   let width = 100;
-  //   damage.width -= "OOOOOOOOOOOOOO"; ///////??????
-  //
-  //   if (damage) {
-  //     damage.style.width = width + '%';
-  //     damage.innerHTML = width - 1 + 'hp';
-  //   }
-  // }
-
-  // function enemyLoseHealth() {
-  //   let damage = document.getElementById('health')
-  //   let width = 100;
-  //   damage.width -= ""; ///////??????
-  //
-  //   if (damage) {
-  //     damage.style.width = width + '%';
-  //     damage.innerHTML = width - 1 + 'hp';
-  //   }
-  // }
 
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
@@ -71,7 +49,7 @@ function enemyLoseHealth() {
   console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
 
   enemyDamage.innerHTML = String(player2Hitpoints);
-  while (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
+  if (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
 
     console.log(enemyHit);
     let player1randomMissfire = Math.random();
@@ -79,28 +57,29 @@ function enemyLoseHealth() {
 
     console.log(player1randomMissfire.toFixed(2));
 
-    button.addEventListener("click", () => {
+
+//removed this listener, so that the "attack" button initiates battleSim
+    // button.addEventListener("click", () => {
       if (player1randomMissfire > .5) {
         console.log(`${player1Name} hit`);
         parseInt(player2Hitpoints);
-        player2Hitpoints-=player1WeaponDamage;
-        damage.innerHTML = String(player1Hitpoints);
-        console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+        player2Hitpoints = (player2Hitpoints - player1WeaponDamage);
+        // damage.innerHTML = String(player1Hitpoints);
+        console.log(`${player2Name} hit points: ${player2Hitpoints}`);
       } else {
-        console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+        // console.log(`${player1Name} hit points: ${player1Hitpoints}`);
         console.log(`${player1Name} missed!`);
-      }
-    });
+      };
+    // });
 
     if (player2RandomMissfire > .5) {
-      player1Hitpoints-=player2WeaponDamage;
-      enemyDamage.innerHTML = String(player2Hitpoints);
-      console.log(`${player2Name} hit points: ${player2Hitpoints}`);
+      player1Hitpoints = (player1Hitpoints - player2WeaponDamage);
+      // enemyDamage.innerHTML = String(player2Hitpoints);
+      console.log(`${player1Name} hit points: ${player1Hitpoints}`);
     } else {
       console.log(`${player2Name} missed!`);
     }
-    document.querySelector('#heroHit').innerHTML = player1Hitpoints;
-    enemyDamage = player2Hitpoints;
+
     heroLoseHealth();
     enemyLoseHealth();
   }
