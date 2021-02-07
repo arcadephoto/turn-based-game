@@ -4,6 +4,7 @@ let charAttack;
 let charHit;
 let charDam;
 let charPhoto;
+let monPhoto;
 var punchAudio = new Audio('./assets/punch.mp3');
 
 
@@ -25,7 +26,22 @@ function makeMonster() {
   mt = mm(monsterType);
   mName = `${s}, ${d1}, ${d2} ${mt}`
   document.getElementById('mName').innerHTML = `${mName}`;
+  n = getRand(0, 4);
+  switch (n) {
+    case 0: monPhoto = "./assets/monster.png"
+    break;
+    case 1: monPhoto = "./assets/monster2.jpg"
+    break;
+    case 2: monPhoto = "./assets/monster3.jpg"
+    break;
+    case 3: monPhoto = "./assets/monster4.png"
+    break;
+    case 4: monPhoto = "./assets/monster5.png"
+    break;
+  }
+document.getElementById('vilPhoto').src = `${monPhoto}`;
 }
+
 
 
 function getHero() {
