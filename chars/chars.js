@@ -26,19 +26,8 @@ function makeMonster() {
   mt = mm(monsterType);
   mName = `${s}, ${d1}, ${d2} ${mt}`
   document.getElementById('mName').innerHTML = `${mName}`;
-  n = getRand(0, 4);
-  switch (n) {
-    case 0: monPhoto = "./assets/monster.png"
-    break;
-    case 1: monPhoto = "./assets/monster2.jpg"
-    break;
-    case 2: monPhoto = "./assets/monster3.jpg"
-    break;
-    case 3: monPhoto = "./assets/monster4.png"
-    break;
-    case 4: monPhoto = "./assets/monster5.png"
-    break;
-  }
+  n = getRand(1, 5);
+  monPhoto = `./assets/monster${n}.jpg`
 document.getElementById('vilPhoto').src = `${monPhoto}`;
 }
 
