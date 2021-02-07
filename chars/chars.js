@@ -55,25 +55,6 @@ setHero();
 doFight();
 };
 
-// function getHeroTest(h) {
-//   let num = players.length;
-// for (i=0; i<num; i++) {
-//   if (h == players[i].name){
-//     console.log('Match!');
-//     charName = players[i].name;
-//     charWeapon = players[i].weapon;
-//     charPower = players[i].power;
-//     charHit = players[i].hitPoints;
-//     charPhoto = players[i].photo;
-//   }
-// }
-// // setHero();
-// };
-
-
-
-
-
 function setHero(){
   document.getElementById('heroName').innerHTML = `Hero: ${charName}`;
   document.getElementById('heroWeap').innerHTML = `Weapon: ${charWeapon}`;
@@ -224,6 +205,7 @@ function heroAttack(){
   document.getElementById('villainCard').classList.remove("vAttAnim");
   setTimeout(punchSound, 700);
   setTimeout(monsterAttack, 2000);
+  battleSim();
 }
 function monsterAttack(){
   document.getElementById('villainCard').classList.remove("villainIntro");

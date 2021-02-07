@@ -23,11 +23,22 @@ let battleSim = () => {
 
   function heroLoseHealth() {
     let healthBar = document.getElementById('heroHealthBar')
-    let health = damage;
+    let health = player1Hitpoints;
     percent = (health / 100);
     width = (percent * 200);
     healthBar.style.width = `${width}px`; ///////??????
 }
+//Health bar works, just needs to be tied into battle damage code
+
+
+function enemyLoseHealth() {
+  let mHealthBar = document.getElementById('mHealthBar')
+  let mHealth = player2Hitpoints;
+  mPercent = (mHealth / 100);
+  mWidth = (mPercent * 200);
+  mHealthBar.style.width = `${mWidth}px`; ///////??????
+}
+
 
 
 
@@ -42,16 +53,16 @@ let battleSim = () => {
   //   }
   // }
 
-  function enemyLoseHealth() {
-    let damage = document.getElementById('health')
-    let width = 100;
-    damage.width -= ""; ///////??????
-
-    if (damage) {
-      damage.style.width = width + '%';
-      damage.innerHTML = width - 1 + 'hp';
-    }
-  }
+  // function enemyLoseHealth() {
+  //   let damage = document.getElementById('health')
+  //   let width = 100;
+  //   damage.width -= ""; ///////??????
+  //
+  //   if (damage) {
+  //     damage.style.width = width + '%';
+  //     damage.innerHTML = width - 1 + 'hp';
+  //   }
+  // }
 
 
   console.log(`${player1Name} hit points: ${player1Hitpoints}`);
@@ -88,6 +99,10 @@ let battleSim = () => {
     } else {
       console.log(`${player2Name} missed!`);
     }
+    document.querySelector('#heroHit').innerHTML = player1Hitpoints;
+    enemyDamage = player2Hitpoints;
+    heroLoseHealth();
+    enemyLoseHealth();
   }
   // if (player1Hitpoints > 0) {
   //   return;
@@ -111,9 +126,6 @@ function doFight(){
 }
 
 function noFight(){
-  // leftAttack.setAttribute('class', 'noFight');
-  // document.getElementById('ninjaStar').hidden = true;
-  // document.getElementById('ninjaStarRight').hidden = true;
   document.body.style.background = "url('./assets/landscape.jpg') center";
 }
 
