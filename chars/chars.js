@@ -1,14 +1,15 @@
 
 let charName ="";
 let charWeapon ="";
-let charAttack = "";
 let charHit;
-let charDam;
+let charDamage;
 let charPhoto = "";
-let monPhoto = "";
+
+let monName = "";
 let mWeapon = "";
-let mName = "";
-let mHealth;
+let mHit;
+let mDamage;
+let monPhoto = "";
 var punchAudio = new Audio('./assets/punch.mp3');
 
 
@@ -37,10 +38,10 @@ function makeMonster() {
   d2 = mm(descriptor2);
   mt = mm(monsterType);
   mw = mm(monWeapon);
-  mName = `${s}, ${d1}, ${d2} ${mt}`;
-  mHealth = getRand(20, 30);
-  document.getElementById('enemyHit').innerHTML = `${mHealth}`;
-  document.getElementById('mName').innerHTML = `${mName}`;
+  monName = `${s}, ${d1}, ${d2} ${mt}`;
+  mHit = getRand(20, 30);
+  document.getElementById('enemyHit').innerHTML = `${mHit}`;
+  document.getElementById('mName').innerHTML = `${monName}`;
   document.getElementById('mWeapName').innerHTML = `Attack: ${mw}`;
 
   // document.getElementById('enemyHit').innerHTML = `Hit Points: ${player2Hitpoints}`;
@@ -61,6 +62,7 @@ function getHero() {
       charWeapon = players[i].weapon;
       charPower = players[i].power;
       charHit = players[i].hitPoints;
+      charDamage = players[i].damage;
       charPhoto = players[i].photo;
     }
   }
@@ -183,30 +185,35 @@ const players = [{
   power: "Energy Blast",
   weapon: "staff",
   hitPoints: 25,
+  damage: 7,
   photo: "wizard.jpg",
 }, {
   name: "Knight",
   power: "Super Swing",
   weapon: "sword",
   hitPoints: 30,
+  damage: 5,
   photo: "knight.png",
 }, {
   name: "Lizard Man",
   power: "tongue attack",
   weapon: "tongue",
   hitPoints: 20,
+  damage: 8,
   photo: "lizardman.png",
 }, {
   name: "Cowboy",
   power: "Scatter Gun",
   weapon: "revolver",
   hitPoints: 25,
+  damage: 7,
   photo: "cowboy.png",
 }, {
   name: "Alien",
   power: "Probe",
   weapon: "atomizer",
   hitPoints: 30,
+  damage: 5,
   photo: "alien.png",
 }];
 
