@@ -29,17 +29,17 @@ let battleSim = () => {
     let percent = (health / 100);
     let width = (percent * 200);
     healthBar.style.width = `${width}px`;
-}
-//Health bar works, just needs to be tied into battle damage code
+  }
+  //Health bar works, just needs to be tied into battle damage code
 
 
-function enemyLoseHealth() {
-  let mHealthBar = document.getElementById('mHealthBar')
-  let mHealth = player2Hitpoints;
-  let mPercent = (mHealth / 100);
-  let mWidth = (mPercent * 200);
-  mHealthBar.style.width = `${mWidth}px`;
-}
+  function enemyLoseHealth() {
+    let mHealthBar = document.getElementById('mHealthBar')
+    let mHealth = player2Hitpoints;
+    let mPercent = (mHealth / 100);
+    let mWidth = (mPercent * 200);
+    mHealthBar.style.width = `${mWidth}px`;
+  }
 
 
 
@@ -58,18 +58,18 @@ function enemyLoseHealth() {
     console.log(player1randomMissfire.toFixed(2));
 
 
-//removed this listener, so that the "attack" button initiates battleSim
+    //removed this listener, so that the "attack" button initiates battleSim
     // button.addEventListener("click", () => {
-      if (player1randomMissfire > .5) {
-        console.log(`${player1Name} hit`);
-        parseInt(player2Hitpoints);
-        player2Hitpoints = (player2Hitpoints - player1WeaponDamage);
-        // damage.innerHTML = String(player1Hitpoints);
-        console.log(`${player2Name} hit points: ${player2Hitpoints}`);
-      } else {
-        // console.log(`${player1Name} hit points: ${player1Hitpoints}`);
-        console.log(`${player1Name} missed!`);
-      };
+    if (player1randomMissfire > .5) {
+      console.log(`${player1Name} hit`);
+      parseInt(player2Hitpoints);
+      player2Hitpoints = (player2Hitpoints - player1WeaponDamage);
+      // damage.innerHTML = String(player1Hitpoints);
+      console.log(`${player2Name} hit points: ${player2Hitpoints}`);
+    } else {
+      // console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+      console.log(`${player1Name} missed!`);
+    };
     // });
 
     if (player2RandomMissfire > .5) {
@@ -93,7 +93,7 @@ function enemyLoseHealth() {
 
 
 
-function doFight(){
+function doFight() {
   // leftAttack.setAttribute('class', 'leftWeapon');
   // document.getElementById('ninjaStar').hidden = false;
   document.body.style.background = "url('./assets/landfight.jpg') center";
@@ -104,22 +104,22 @@ function doFight(){
   // battleSim();
 }
 
-function noFight(){
+function noFight() {
   document.body.style.background = "url('./assets/landscape.jpg') center";
 }
 
 
 
 // For testing purposes please don't remove.
-const enemies = [
-  {
-    name: "Ogre",
-    power: "stomp",
-    // My idea for how to do wepons.
-    weapon: {machineGun: Math.round((Math.random() * 26) + 10)},
-    hitPoints: (Math.round(Math.random() * 30) + 5)
-  }
-]
+const enemies = [{
+  name: "Ogre",
+  power: "stomp",
+  // My idea for how to do wepons.
+  weapon: {
+    machineGun: Math.round((Math.random() * 26) + 10)
+  },
+  hitPoints: (Math.round(Math.random() * 30) + 5)
+}]
 // you can hard code the dropdown to include a value for each player in the players' array (static) or
 // you can iterate over the players array, generate HTML for each player, and inject that into the DOM (dynamic)
 
@@ -133,14 +133,24 @@ const selectPlayer = (event) => {
   selectedPlayer = new Character(player);
 }
 
-function Character({ name, power, weapon, hitPoints } = {}) {
+function Character({
+  name,
+  power,
+  weapon,
+  hitPoints
+} = {}) {
   this.name = name;
   this.power = power;
   this.weapon = weapon;
   this.hitPoints = hitPoints;
 }
 
-function Enemy({ name, power, weapon, hitPoints } = {}) {
+function Enemy({
+  name,
+  power,
+  weapon,
+  hitPoints
+} = {}) {
   this.name = name;
   this.power = power;
   this.weapon = weapon;

@@ -7,6 +7,7 @@ let charPhoto;
 let monPhoto;
 let mWeapon;
 let mName;
+let mHealth;
 var punchAudio = new Audio('./assets/punch.mp3');
 
 
@@ -36,8 +37,11 @@ function makeMonster() {
   mt = mm(monsterType);
   mw = mm(monWeapon);
   mName = `${s}, ${d1}, ${d2} ${mt}`;
+  mHealth = getRand(20, 30);
+  document.getElementById('enemyHit').innerHTML = `${mHealth}`;
   document.getElementById('mName').innerHTML = `${mName}`;
   document.getElementById('mWeapName').innerHTML = `Attack: ${mw}`;
+
   // document.getElementById('enemyHit').innerHTML = `Hit Points: ${player2Hitpoints}`;
   n = getRand(1, 5);
   monPhoto = `./assets/monster${n}.jpg`;
