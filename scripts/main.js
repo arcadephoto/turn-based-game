@@ -49,6 +49,7 @@ let battleSim = () => {
   console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
 
   enemyDamage.innerHTML = String(player2Hitpoints);
+<<<<<<< HEAD
   if (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
 
     console.log(enemyHit);
@@ -82,12 +83,40 @@ let battleSim = () => {
 
     heroLoseHealth();
     enemyLoseHealth();
+=======
+  button.addEventListener("click", () => {
+    while (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
+
+      console.log(enemyHit);
+      let player1randomMissfire = Math.random();
+      let player2RandomMissfire = Math.random();
+
+      console.log(player1randomMissfire.toFixed(2));
+
+      button.addEventListener("click", () => {
+        if (player1randomMissfire > .5) {
+          console.log(`${player1Name} hit`);
+          parseInt(player2Hitpoints)
+          player1Hitpoints-=player2WeaponDamage;
+          damage.innerHTML = String(player1Hitpoints);
+        } else {
+        }
+      });
+
+      if (player2RandomMissfire > .5) {
+        player2Hitpoints-=player1WeaponDamage;
+        enemyDamage.innerHTML = String(player2Hitpoints);
+      } else {
+      }
+    }
+  })
+
+  if (player1Hitpoints <= 0) {
+    damage.innerHTML = "0";
+  } else if(parseInt(player2Hitpoints) <= 0){
+    enemyDamage.innerHTML = "0"
+>>>>>>> Playing around with trying to add my logic to the DOM.
   }
-  // if (player1Hitpoints > 0) {
-  //   return;
-  // } else {
-  //   reutn;
-  // }
 }
 
 
