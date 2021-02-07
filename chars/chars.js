@@ -1,6 +1,7 @@
 
-let charName ="";
+let charName = "";
 let charWeapon ="";
+let charPower = "";
 let charHit;
 let charDamage;
 let charPhoto = "";
@@ -11,8 +12,6 @@ let mHit;
 let mDamage;
 let monPhoto = "";
 var punchAudio = new Audio('./assets/punch.mp3');
-
-
 
 function getRand(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -43,8 +42,6 @@ function makeMonster() {
   document.getElementById('enemyHit').innerHTML = `${mHit}`;
   document.getElementById('mName').innerHTML = `${monName}`;
   document.getElementById('mWeapName').innerHTML = `Attack: ${mw}`;
-
-  // document.getElementById('enemyHit').innerHTML = `Hit Points: ${player2Hitpoints}`;
   n = getRand(1, 5);
   monPhoto = `./assets/monster${n}.jpg`;
   document.getElementById('vilPhoto').src = `${monPhoto}`;
