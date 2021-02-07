@@ -5,7 +5,13 @@ body{
   background-position: center;
   font-family: Tahoma, Helvetica, sans-serif;
 }
-
+#combatlogo{
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 20%;
+  right: 40%
+}
 .dropdown{
   position: relative;
 }
@@ -21,7 +27,7 @@ body{
 
 #battlefield {
   text-align: center;
-  padding-top: 50%;
+  padding-top: 45%;
 }
 
 #rightBase {

@@ -94,14 +94,10 @@ let battleSim = () => {
 
 
 function doFight() {
-  // leftAttack.setAttribute('class', 'leftWeapon');
-  // document.getElementById('ninjaStar').hidden = false;
   document.body.style.background = "url('./assets/landfight.jpg') center";
-  // document.getElementById('ninjaStarRight').hidden = false;
   document.getElementById('herocard').hidden = false;
+  document.getElementById('combatlogo').hidden = true;
   snd.play();
-
-  // battleSim();
 }
 
 function noFight() {

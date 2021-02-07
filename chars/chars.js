@@ -1,12 +1,13 @@
-let charName;
-let charWeapon;
-let charAttack;
+
+let charName ="";
+let charWeapon ="";
+let charAttack = "";
 let charHit;
 let charDam;
-let charPhoto;
-let monPhoto;
-let mWeapon;
-let mName;
+let charPhoto = "";
+let monPhoto = "";
+let mWeapon = "";
+let mName = "";
 let mHealth;
 var punchAudio = new Audio('./assets/punch.mp3');
 
@@ -56,7 +57,6 @@ function getHero() {
   let num = players.length;
   for (i = 0; i < num; i++) {
     if (h == players[i].name) {
-      console.log('Match!');
       charName = players[i].name;
       charWeapon = players[i].weapon;
       charPower = players[i].power;
