@@ -54,9 +54,16 @@ font-size: x-large;
   top: 5%;
   left: 10%;
   box-shadow: 5px 5px 5px gray;
-
-
 }
+
+#heroHealthBar {
+  background-color: green;
+  width: 200px;
+  height: 15px;
+}
+
+
+
 .cardIntro {
   animation: slide-right 3s;
 }

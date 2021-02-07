@@ -22,15 +22,25 @@ let battleSim = () => {
 
 
   function heroLoseHealth() {
-    let damage = document.getElementById('health')
-    let width = 100;
-    damage.width -= ""; ///////??????
+    let healthBar = document.getElementById('heroHealthBar')
+    let health = damage;
+    percent = (health / 100);
+    width = (percent * 200);
+    healthBar.style.width = `${width}px`; ///////??????
+}
 
-    if (damage) {
-      damage.style.width = width + '%';
-      damage.innerHTML = width - 1 + 'hp';
-    }
-  }
+
+
+  // function heroLoseHealth() {
+  //   let damage = document.getElementById('health')
+  //   let width = 100;
+  //   damage.width -= "OOOOOOOOOOOOOO"; ///////??????
+  //
+  //   if (damage) {
+  //     damage.style.width = width + '%';
+  //     damage.innerHTML = width - 1 + 'hp';
+  //   }
+  // }
 
   function enemyLoseHealth() {
     let damage = document.getElementById('health')
