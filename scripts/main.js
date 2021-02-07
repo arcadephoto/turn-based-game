@@ -45,17 +45,12 @@ let battleSim = () => {
   // console.log(`${player2Name} hit points: ${player2Hitpoints}`);
   // console.log(`${player1Name} weapon damage: ${player2WeaponDamage}`);
   // console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
-
-<<<<<<< HEAD
   enemyDamage.innerHTML = String(player2Hitpoints);
-<<<<<<< HEAD
   if (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
-=======
->>>>>>> Hooked up the battle to the UI. Maybe.
 
   while (parseInt(player1Hitpoints) > 0 && parseInt(player2Hitpoints) > 0) {
     enemyDamage.innerHTML = String(player2Hitpoints);
-    damage.innerHTML = String(player1Hitpoints);  
+    damage.innerHTML = String(player1Hitpoints);
     console.log(enemyHit);
     let player1randomMissfire = Math.random();
     let player2RandomMissfire = Math.random();
@@ -90,7 +85,6 @@ let battleSim = () => {
 
     heroLoseHealth();
     enemyLoseHealth();
-=======
   button.addEventListener("click", () => {
     while (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
 
@@ -121,8 +115,7 @@ let battleSim = () => {
   if (player1Hitpoints <= 0) {
     damage.innerHTML = "0";
   } else if(parseInt(player2Hitpoints) <= 0){
-    enemyDamage.innerHTML = "0"
->>>>>>> Playing around with trying to add my logic to the DOM.
+    enemyDamage.innerHTML = "0";
   }
 }
 
