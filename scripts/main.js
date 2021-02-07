@@ -48,16 +48,21 @@ let battleSim = () => {
   console.log(`${player2Name} hit points: ${player2Hitpoints}`);
   console.log(`${player1Name} weapon damage: ${player2WeaponDamage}`);
   console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
-  while (player1Hitpoints > 0 && player2Hitpoints > 0) {
+
+  enemyDamage.innerHTML = String(player2Hitpoints);
+  while (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
+
     console.log(enemyHit);
     let player1randomMissfire = Math.random();
     let player2RandomMissfire = Math.random();
 
     console.log(player1randomMissfire.toFixed(2));
+
     button.addEventListener("click", () => {
       if (player1randomMissfire > .5) {
         console.log(`${player1Name} hit`);
-        player1Hitpoints-=player2WeaponDamage;
+        parseInt(player2Hitpoints);
+        player2Hitpoints-=player1WeaponDamage;
         damage.innerHTML = String(player1Hitpoints);
         console.log(`${player1Name} hit points: ${player1Hitpoints}`);
       } else {
@@ -67,7 +72,7 @@ let battleSim = () => {
     });
 
     if (player2RandomMissfire > .5) {
-      player2Hitpoints-=player1WeaponDamage;
+      player1Hitpoints-=player2WeaponDamage;
       enemyDamage.innerHTML = String(player2Hitpoints);
       console.log(`${player2Name} hit points: ${player2Hitpoints}`);
     } else {
@@ -75,12 +80,11 @@ let battleSim = () => {
     }
   }
   // if (player1Hitpoints > 0) {
-  //   alert(`${player1Name} won!`);
+  //   return;
   // } else {
-  //   alert(`${player2Name} won!`);
+  //   reutn;
   // }
 }
-// document.getElementById('attackbtn').addEventListener("click", () => battleSim());
 
 
 
