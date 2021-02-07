@@ -1,11 +1,11 @@
 // (function() {
 //   'use strict';
 
-const button = document.querySelector(".test-run");
 var snd = new Audio("./assets/bell.mp3");
 // let leftAttack = document.getElementById("ninjaStar");
 
 let battleSim = () => {
+  const button = document.querySelector("#attackbtn");
   let damage = document.getElementById("charHit");
   let enemyDamage = document.getElementById("enemyHit");
   // For testing purposes
@@ -54,16 +54,17 @@ let battleSim = () => {
     let player2RandomMissfire = Math.random();
 
     console.log(player1randomMissfire.toFixed(2));
-
-    if (player1randomMissfire > .5) {
-      console.log(`${player1Name} hit`);
-      player1Hitpoints-=player2WeaponDamage;
-      damage.innerHTML = String(player1Hitpoints);
-      console.log(`${player1Name} hit points: ${player1Hitpoints}`);
-    } else {
-      console.log(`${player1Name} hit points: ${player1Hitpoints}`);
-      console.log(`${player1Name} missed!`);
-    }
+    button.addEventListener("click", () => {
+      if (player1randomMissfire > .5) {
+        console.log(`${player1Name} hit`);
+        player1Hitpoints-=player2WeaponDamage;
+        damage.innerHTML = String(player1Hitpoints);
+        console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+      } else {
+        console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+        console.log(`${player1Name} missed!`);
+      }
+    });
 
     if (player2RandomMissfire > .5) {
       player2Hitpoints-=player1WeaponDamage;
@@ -73,14 +74,14 @@ let battleSim = () => {
       console.log(`${player2Name} missed!`);
     }
   }
-  if (player1Hitpoints > 0) {
-    alert(`${player1Name} won!`);
-  } else {
-    alert(`${player2Name} won!`);
-  }
+  // if (player1Hitpoints > 0) {
+  //   alert(`${player1Name} won!`);
+  // } else {
+  //   alert(`${player2Name} won!`);
+  // }
 }
-document.getElementById('pointer').addEventListener("click", () => battleSim());
-//I pointed this event listener to a null object for testing the attack buttons - Chad
+// document.getElementById('attackbtn').addEventListener("click", () => battleSim());
+
 
 
 
@@ -91,6 +92,7 @@ function doFight(){
   // document.getElementById('ninjaStarRight').hidden = false;
   document.getElementById('herocard').hidden = false;
   snd.play();
+
   battleSim();
 }
 
