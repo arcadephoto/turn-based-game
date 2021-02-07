@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Bossfight!</title>
+  <title>Combat Thingy</title>
   <link rel="stylesheet" href="./chars/chars.css">
   <link rel="stylesheet" href="./styles/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/styles.css">
@@ -32,6 +32,23 @@
         </select>
       </div>
 
+      <!-- <div class="dropdown" id="heroDrop">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="heroes" data-bs-toggle="dropdown" aria-expanded="false">
+    Choose Your Hero!
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" value="1" onclick="getHeroTest(Knight)">Knight</a></li>
+    <li><a class="dropdown-item" value="2" onclick="getHeroTest()">Wizard</a></li>
+    <li><a class="dropdown-item" value="3" onclick="getHeroTest()">Cowboy</a></li>
+    <li><a class="dropdown-item" value="4" onclick="getHeroTest()">Alien</a></li>
+    <li><a class="dropdown-item" value="5" onclick="getHeroTest()">Lizard Man</a></li>
+  </ul>
+</div> -->
+
+
+
+
+
 
 
 
@@ -52,8 +69,10 @@
       </div>
 
       <div class="col-sm-8" id="battlefield">
-        <button type="button" class="btn btn-danger" onclick="doFight()">Fight!</button>
-        <button type="button" class="btn btn-warning" onclick="noFight()">Stop Fight!</button>
+        <h1>Welcome to Fight Thingy!</h1>
+        <!--temporary text. the screen placement is off without it.-->
+        <!-- <button type="button" class="btn btn-danger" onclick="doFight()">Fight!</button>
+        <button type="button" class="btn btn-warning" onclick="noFight()">Stop Fight!</button> -->
       </div>
 
 
@@ -65,7 +84,7 @@
           <img id="vilPhoto" class="card-img-top" src="./assets/monster1.jpg" alt="Card image cap">
           <div class="card-body">
             <h5 id="mName" class="charName card-title"></h5>
-            <p class="card-text">Attack:</p>
+            <p id="mWeapName" class="card-text properName"></p>
             <p class="card-text">Health: <span id="enemyHit"></span></p>
           </div>
 </div>

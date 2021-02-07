@@ -97,7 +97,7 @@ function doFight(){
   document.getElementById('herocard').hidden = false;
   snd.play();
 
-  battleSim();
+  // battleSim();
 }
 
 function noFight(){
@@ -106,41 +106,8 @@ function noFight(){
   // document.getElementById('ninjaStarRight').hidden = true;
   document.body.style.background = "url('./assets/landscape.jpg') center";
 }
-///////////////////////////////////////////////CHARACTERS
 
-// const players = [
-//   {
-//     name: "Wizard",
-//     power: "Energy Blast",
-//     weapon: "staff",
-//     hitPoints: 25,
-//     photo: "wizard.jpg",
-//   }, {
-//     name: "Knight",
-//     power: "Super Swing",
-//     weapon: "sword",
-//     hitPoints: 30,
-//     photo: "knight.png",
-//   }, {
-//     name: "Lizard Man",
-//     power: "tongue attack",
-//     weapon: "tongue",
-//     hitPoints: 20,
-//     photo: "lizardman.png",
-//   }, {
-//     name: "Cowboy",
-//     power: "Scatter Gun",
-//     weapon: "revolver",
-//     hitPoints: 25,
-//     photo: "cowboy.png",
-//   }, {
-//     name: "Alien",
-//     power: "Probe",
-//     weapon: "atomizer",
-//     hitPoints: 30,
-//     photo: "alien.png",
-//   }
-// ];
+
 
 // For testing purposes please don't remove.
 const enemies = [

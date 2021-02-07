@@ -5,6 +5,7 @@ let charHit;
 let charDam;
 let charPhoto;
 let monPhoto;
+let mWeapon;
 var punchAudio = new Audio('./assets/punch.mp3');
 
 
@@ -24,8 +25,11 @@ function makeMonster() {
   d1 = mm(descriptor);
   d2 = mm(descriptor2);
   mt = mm(monsterType);
+  mw = mm(monWeapon);
   mName = `${s}, ${d1}, ${d2} ${mt}`
   document.getElementById('mName').innerHTML = `${mName}`;
+  document.getElementById('mWeapName').innerHTML = `Attack: ${mw}`;
+  // document.getElementById('enemyHit').innerHTML = `Hit Points: ${player2Hitpoints}`;
   n = getRand(1, 5);
   monPhoto = `./assets/monster${n}.jpg`
 document.getElementById('vilPhoto').src = `${monPhoto}`;
@@ -48,7 +52,27 @@ for (i=0; i<num; i++) {
   }
 }
 setHero();
+doFight();
 };
+
+// function getHeroTest(h) {
+//   let num = players.length;
+// for (i=0; i<num; i++) {
+//   if (h == players[i].name){
+//     console.log('Match!');
+//     charName = players[i].name;
+//     charWeapon = players[i].weapon;
+//     charPower = players[i].power;
+//     charHit = players[i].hitPoints;
+//     charPhoto = players[i].photo;
+//   }
+// }
+// // setHero();
+// };
+
+
+
+
 
 function setHero(){
   document.getElementById('heroName').innerHTML = `Hero: ${charName}`;
@@ -135,6 +159,28 @@ const monsterType = [
   "housecat",
 ];
 
+
+const monWeapon = [
+
+"claws",
+"laser eyes",
+"fangs",
+"unconstructive criticism",
+"antique bayonet",
+"dull knife",
+"pointy stick",
+"sharp knife",
+"ball peen hammer",
+"x-acto knife",
+"Freddy Kreuger claws",
+"battle axe",
+"brass knuckles",
+"dogs with bees in their mouths",
+"flamethrower",
+"acid breath",
+"poison darts",
+
+]
 
 
 makeMonster();
