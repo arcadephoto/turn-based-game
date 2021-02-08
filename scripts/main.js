@@ -109,7 +109,6 @@ function Enemy({
   this.hitPoints = hitPoints;
   this.damage = damage;
 }
-<<<<<<< HEAD
 
 
 function startGame() {
@@ -118,8 +117,3 @@ function startGame() {
   document.getElementById('heroDrop').hidden = false;
 }
 setTimeout(startGame, 1000);
-
-// battleSim();
-// })();
-=======
->>>>>>> Removed some commented code.
