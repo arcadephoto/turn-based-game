@@ -18,14 +18,14 @@ let battleSim = () => {
     player1randomMissfire = Math.random();
     player2randomMissfire = Math.random();
 
-    if (player1randomMissfire > .5) {
+    if (player1randomMissfire > .03) {
       window.alert(`${charName} hit ${monName} for ${charDamage} points!`);
       mHit = (mHit - charDamage);
     } else {
       window.alert(`${charName} missed!`);
     };
 
-    if (player2randomMissfire > .5) {
+    if (player2randomMissfire > .03) {
       window.alert(`${monName} hit ${charName} for ${mDamage} points!`)
       charHit = (charHit - mDamage);
       console.log(`${charName} hit points: ${charHit}`);
