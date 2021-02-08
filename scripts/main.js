@@ -78,6 +78,7 @@ let battleSim = () => {
 function doFight() {
   document.body.style.background = "url('./assets/landfight.jpg') center";
   document.getElementById('textWindow').hidden = false;
+  textWindow.value = "C: autoexec.bat \nLoading battle system...\nStand by...\n\n"
   document.getElementById('herocard').hidden = false;
   document.getElementById('combatlogo').hidden = true;
   snd.play();
