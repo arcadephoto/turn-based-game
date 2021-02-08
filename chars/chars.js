@@ -9,7 +9,7 @@ let charPhoto = "";
 let monName = "";
 let mWeapon = "";
 let mHit;
-let mDamage = 7;
+let mDamage = getRand(1, 10);
 let monPhoto = "";
 var punchAudio = new Audio('./assets/punch.mp3');
 
