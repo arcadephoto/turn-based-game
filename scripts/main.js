@@ -109,6 +109,7 @@ function Enemy({
   this.hitPoints = hitPoints;
   this.damage = damage;
 }
+<<<<<<< HEAD
 
 
 function startGame() {
@@ -120,3 +121,5 @@ setTimeout(startGame, 1000);
 
 // battleSim();
 // })();
+=======
+>>>>>>> Removed some commented code.
