@@ -241,4 +241,12 @@ font-size: x-large;
   text-transform: capitalize;
 }
 
+#resetButton{
+  border-radius: 5px;
+  height: 100px;
+  width: 200px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=anim.css.map */

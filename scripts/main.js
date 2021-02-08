@@ -55,12 +55,14 @@ let battleSim = () => {
       window.alert("No! Evil has triumphed!");
       document.getElementById('herocard').hidden = true;
       fightOver = true;
+      document.getElementById('resetButton').hidden = false;
       return;
     }
     if (mHit <= 0) {
       window.alert("Whoa! Good actually beat evil for once!");
       document.getElementById('villainCard').hidden = true;
       fightOver = true;
+      document.getElementById('resetButton').hidden = false;
       return;
     }
   } else {
@@ -77,11 +79,6 @@ function doFight() {
   document.getElementById('combatlogo').hidden = true;
   snd.play();
 }
-
-function noFight() {
-  document.body.style.background = "url('./assets/landscape.jpg') center";
-}
-
 
 
 function Character({
@@ -117,3 +114,9 @@ function startGame() {
   document.getElementById('heroDrop').hidden = false;
 }
 setTimeout(startGame, 1000);
+
+function resetGame(){
+  location.reload();
+}
+// battleSim();
+// })();

@@ -42,16 +42,13 @@ function makeMonster() {
   document.getElementById('enemyHit').innerHTML = `${mHit}`;
   document.getElementById('mName').innerHTML = `${monName}`;
   document.getElementById('mWeapName').innerHTML = `Attack: ${mw}`;
-  n = getRand(1, 5);
+  let n = getRand(1, 5);
   monPhoto = `./assets/monster${n}.jpg`;
   document.getElementById('vilPhoto').src = `${monPhoto}`;
 }
 
-
-
 function getHero() {
   let h = document.getElementById('heroes').value;
-  console.log(h);
   let num = players.length;
   for (i = 0; i < num; i++) {
     if (h == players[i].name) {
