@@ -38,7 +38,7 @@ let battleSim = () => {
 
     function heroLoseHealth() {
       let healthBar = document.getElementById('heroHealthBar');
-      let percent = (charHit / 30);
+      let percent = (charHit / character.hitPoints);
       let width = (percent * 200);
       damage.innerHTML = `Health: ${charHit}`;
       healthBar.style.width = `${width}px`;
@@ -59,7 +59,7 @@ let battleSim = () => {
       return;
     }
     if (mHit <= 0) {
-      textWindow.value = textWindow.value + "Whoa! Good actually beat evil for once!\n";
+      textWindow.value = textWindow.value + "THE GOOD GUYS WIN!\n";
       document.getElementById('villainCard').hidden = true;
       fightOver = true;
       document.getElementById('resetButton').hidden = false;

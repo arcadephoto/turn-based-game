@@ -5,6 +5,7 @@ let charPower = "";
 let charHit;
 let charDamage;
 let charPhoto = "";
+let character =[];
 
 let monName = "";
 let mWeapon = "";
@@ -72,6 +73,7 @@ function setHero() {
   document.getElementById('herophoto').src = `./assets/${charPhoto}`;
   document.getElementById('herocard').hidden = false;
   document.getElementById('heroDrop').hidden = true;
+  character = new Character({name: charName, weapon: charWeapon, power: charPower, hitPoints: charHit, damage: charDamage});
 }
 
 
