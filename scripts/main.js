@@ -4,118 +4,65 @@
 
 var snd = new Audio("./assets/bell.mp3");
 
+
+const button = document.querySelector("#attackbtn");
+let damage = document.getElementById("heroHit");
+let enemyDamage = document.getElementById("enemyHit");
+let player1WeaponDamage = charDamage;
+let player2WeaponDamage = mDamage;
+let player1Hitpoints = charHit;
+let player2Hitpoints = mHit;
+let player1randomMissfire;
+let player2RandomMissfire;
+
 let battleSim = () => {
-  const button = document.querySelector("#attackbtn");
-  let damage = document.getElementById("charHit");
-  let enemyDamage = document.getElementById("enemyHit");
-  // let player1Weapon = players[0].weapon;
-  // let player2Name = enemies[0].name;
-  // let player2Weapon = enemies[0].weapon;
-  let player1WeaponDamage = 2;
-  let player2WeaponDamage = 2;
-  // let player1WeaponDamage = (Math.round(Math.random() * 10) + 1);
-  // let player2WeaponDamage = (Math.round(Math.random() * 10) + 1);
-  let player1Hitpoints = damage.innerHTML;
-  let player2Hitpoints = enemyDamage.innerHTML;
-  // let player2RandomMissfire = Math.random();
 
-
-
-  function heroLoseHealth() {
-    let healthBar = document.getElementById('heroHealthBar')
-    let health = player1Hitpoints;
-    let percent = (health / 100);
-    let width = (percent * 200);
-    healthBar.style.width = `${width}px`;
-  }
-  //Health bar works, just needs to be tied into battle damage code
-
-
-  function enemyLoseHealth() {
-    let mHealthBar = document.getElementById('mHealthBar')
-    let mHealth = player2Hitpoints;
-    let mPercent = (mHealth / 100);
-    let mWidth = (mPercent * 200);
-    mHealthBar.style.width = `${mWidth}px`;
-  }
-
-
-
-  // console.log(`${player1Name} hit points: ${player1Hitpoints}`);
-  // console.log(`${player2Name} hit points: ${player2Hitpoints}`);
-  // console.log(`${player1Name} weapon damage: ${player2WeaponDamage}`);
-  // console.log(`${player2Name} weapon damage: ${player2WeaponDamage}`);
-  enemyDamage.innerHTML = String(player2Hitpoints);
-  if (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
-
-  while (parseInt(player1Hitpoints) > 0 && parseInt(player2Hitpoints) > 0) {
-    enemyDamage.innerHTML = String(player2Hitpoints);
-    damage.innerHTML = String(player1Hitpoints);
-    console.log(enemyHit);
-    let player1randomMissfire = Math.random();
-    let player2RandomMissfire = Math.random();
-
-    console.log(player1randomMissfire.toFixed(2));
-
-
-    //removed this listener, so that the "attack" button initiates battleSim
-    // button.addEventListener("click", () => {
+  if (charHit > 0 && mHit > 0) {
+    player1randomMissfire = Math.random();
+    player2randomMissfire = Math.random();
 
     if (player1randomMissfire > .5) {
-      // console.log(`${player1Name} hit`);
-      // parseInt(player2Hitpoints);
-      player2Hitpoints = (parseInt(player2Hitpoints) - player1WeaponDamage);
-      // enemyHit.innerHTML = String(player2Hitpoints);
-      // damage.innerHTML = String(player1Hitpoints);
-      // console.log(`${player2Name} hit points: ${player2Hitpoints}`);
+      window.alert(`${charName} hit ${monName} for ${charDamage} points!`);
+      mHit = (mHit - charDamage);
+      // console.log(`${monName} hit points: ${mHit}`);
     } else {
-      // console.log(`${player1Name} hit points: ${player1Hitpoints}`);
-      // console.log(`${player1Name} missed!`);
+      window.alert(`${charName} missed!`);
     };
-    // });
 
-    if (player2RandomMissfire > .5) {
-      player1Hitpoints = (parseInt(player1Hitpoints) - player2WeaponDamage);
-
-      // enemyDamage.innerHTML = String(player2Hitpoints);
-      // console.log(`${player1Name} hit points: ${player1Hitpoints}`);
+    if (player2randomMissfire > .5) {
+      window.alert(`${monName} hit ${charName} for ${mDamage} points!`)
+      charHit = (charHit - mDamage);
+      console.log(`${charName} hit points: ${charHit}`);
     } else {
-      // console.log(`${player2Name} missed!`);
+      window.alert(`${monName} missed!`);
     }
 
     heroLoseHealth();
     enemyLoseHealth();
-  button.addEventListener("click", () => {
-    while (player1Hitpoints > 0 && parseInt(player2Hitpoints) > 0) {
 
-      console.log(enemyHit);
-      let player1randomMissfire = Math.random();
-      let player2RandomMissfire = Math.random();
-
-      console.log(player1randomMissfire.toFixed(2));
-
-      button.addEventListener("click", () => {
-        if (player1randomMissfire > .5) {
-          console.log(`${player1Name} hit`);
-          parseInt(player2Hitpoints)
-          player1Hitpoints-=player2WeaponDamage;
-          damage.innerHTML = String(player1Hitpoints);
-        } else {
-        }
-      });
-
-      if (player2RandomMissfire > .5) {
-        player2Hitpoints-=player1WeaponDamage;
-        enemyDamage.innerHTML = String(player2Hitpoints);
-      } else {
-      }
+    function heroLoseHealth() {
+      let healthBar = document.getElementById('heroHealthBar');
+      let percent = (charHit / 30);
+      let width = (percent * 200);
+      damage.innerHTML = `Health: ${charHit}`;
+      healthBar.style.width = `${width}px`;
     }
-  })
 
-  if (parseInt(player1Hitpoints) <= 0) {
-    damage.innerHTML = "0";
-  } else if(parseInt(player2Hitpoints) <= 0){
-    enemyDamage.innerHTML = "0";
+    function enemyLoseHealth() {
+      let mHealthBar = document.getElementById('mHealthBar');
+      let mPercent = (mHit / 30);
+      let mWidth = (mPercent * 200);
+      enemyDamage.innerHTML = mHit;
+      mHealthBar.style.width = `${mWidth}px`;
+    }
+    if (charHit <= 0) {
+      window.alert("No! Evil has triumphed!");
+    }
+    if (mHit <= 0) {
+      window.alert("Whoa! Good actually beat evil for once!");
+    }
+  } else {
+    window.alert("Sadly, this contest has concluded.");
   }
 }
 
@@ -134,29 +81,6 @@ function noFight() {
 }
 
 
-
-// For testing purposes please don't remove.
-const enemies = [{
-  name: "Ogre",
-  power: "stomp",
-  // My idea for how to do wepons.
-  weapon: {
-    machineGun: Math.round((Math.random() * 26) + 10)
-  },
-  hitPoints: (Math.round(Math.random() * 30) + 5)
-}]
-// you can hard code the dropdown to include a value for each player in the players' array (static) or
-// you can iterate over the players array, generate HTML for each player, and inject that into the DOM (dynamic)
-
-// you need an event listener that will fire when a character is selected
-
-let selectedPlayer = null;
-
-const selectPlayer = (event) => {
-  const selection = 'wizard';
-  const player = players.find(player => player.name === selection);
-  selectedPlayer = new Character(player);
-}
 
 function Character({
   name,

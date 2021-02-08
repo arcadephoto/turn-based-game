@@ -9,7 +9,7 @@ let charPhoto = "";
 let monName = "";
 let mWeapon = "";
 let mHit;
-let mDamage;
+let mDamage = 7;
 let monPhoto = "";
 var punchAudio = new Audio('./assets/punch.mp3');
 
@@ -224,8 +224,8 @@ function heroAttack() {
   document.getElementById('herocard').classList.remove("cardIntro");
   document.getElementById('villainCard').classList.remove("vAttAnim");
   setTimeout(punchSound, 700);
-  setTimeout(monsterAttack, 2000);
-  battleSim();
+  setTimeout(monsterAttack, 1500);
+  setTimeout(battleSim, 3000);
 }
 
 function monsterAttack() {
