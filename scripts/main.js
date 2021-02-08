@@ -13,6 +13,8 @@ let player2randomMissfire;
 let fightOver = false;
 let textWindow = document.getElementById('textWindow');
 
+enemy = new Enemy({name: monName, hitPoints: mHit, weapon: mw, damage: mDamage});
+
 let battleSim = () => {
 
   if (charHit > 0 && mHit > 0) {
@@ -46,7 +48,7 @@ let battleSim = () => {
 
     function enemyLoseHealth() {
       let mHealthBar = document.getElementById('mHealthBar');
-      let mPercent = (mHit / 30);
+      let mPercent = (mHit / enemy.hitPoints);
       let mWidth = (mPercent * 200);
       enemyDamage.innerHTML = mHit;
       mHealthBar.style.width = `${mWidth}px`;

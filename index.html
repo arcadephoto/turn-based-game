@@ -1,120 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Combat Thingy</title>
-    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-  </head>
-  <body>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2" id="leftBase">
-          <div class="properName" id="heroDrop" hidden>
-            <label for="heroes">Choose your hero!</label>
+<head>
+  <meta charset="utf-8" />
+  <title>Combat Thingy</title>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
 
-            <select onchange="getHero()" name="heroes" id="heroes">
-              <option class="properName" value="null"></option>
-              <option class="properName" value="Knight">Knight</option>
-              <option class="properName" value="Wizard">Wizard</option>
-              <option class="properName" value="Cowboy">Cowboy</option>
-              <option class="properName" value="Alien">Alien</option>
-              <option class="properName" value="Lizard Man">Lizard Man</option>
-            </select>
-          </div>
+<body>
 
-          <div
-            class="card cardIntro"
-            style="width: 18rem;"
-            id="herocard"
-            hidden
-          >
-            <img
-              id="herophoto"
-              class="card-img-top"
-              src="./assets/hero.png"
-              alt="Card image cap"
-            />
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2" id="leftBase">
+        <div class="properName" id="heroDrop" hidden>
+          <label for="heroes">Choose your hero!</label>
 
-            <div class="card-body">
-              <h5 id="heroName" class="card-title"></h5>
-              <p id="heroWeap" class="properName" class="card-text"></p>
-              <p id="heroHit" class="card-text"></p>
-              <p id="heroHealthBar" class="card-text"></p>
-              <a
-                id="attackbtn"
-                href="#"
-                class="btn btn-primary test-run"
-                onclick="heroAttack()"
-                >Attack!</a
-              >
-            </div>
-          </div>
-
-          <div class="leftWeapon" id="ninjaStar" hidden></div>
+          <select onchange="getHero()" name="heroes" id="heroes">
+            <option class="properName" value="null"></option>
+            <option class="properName" value="Knight">Knight</option>
+            <option class="properName" value="Wizard">Wizard</option>
+            <option class="properName" value="Cowboy">Cowboy</option>
+            <option class="properName" value="Alien">Alien</option>
+            <option class="properName" value="Lizard Man">Lizard Man</option>
+          </select>
         </div>
 
-        <div class="col-sm-8" id="battlefield">
-          <div><img id="combatlogo" src="./assets/combatlogo.png" /></div>
-          <textarea
-            id="textWindow"
-            class="form-control"
-            type="text"
-            placeholder="The battle begins..."
-            aria-label="readonly input example"
-            hidden
-            readonly
-          ></textarea>
+        <div class="card cardIntro" style="width: 18rem;" id="herocard" hidden>
+          <img id="herophoto" class="card-img-top" src="./assets/hero.png" alt="Card image cap" />
 
-          <div>
-            <button
-              id="resetButton"
-              onclick="resetGame()"
-              type="button"
-              class="btn btn-primary"
-              hidden
-            >
-              Thanks! Go Again
-            </button>
+          <div class="card-body">
+            <h5 id="heroName" class="card-title"></h5>
+            <p id="heroWeap" class="properName" class="card-text"></p>
+            <p id="heroHit" class="card-text"></p>
+            <p id="heroHealthBar" class="card-text"></p>
+            <a id="attackbtn" href="#" class="btn btn-primary test-run" onclick="heroAttack()">Attack!</a>
           </div>
         </div>
 
-        <div class="col-sm-2" id="rightBase">
-          <div
-            class="card villainIntro"
-            style="width: 18rem;"
-            id="villainCard"
-            hidden
-          >
-            <img
-              id="vilPhoto"
-              class="card-img-top"
-              src="./assets/monster1.jpg"
-              alt="Card image cap"
-            />
-            
-            <div class="card-body">
-              <h5 id="mName" class="charName card-title"></h5>
-              <p id="mWeapName" class="card-text properName"></p>
-              <p class="card-text">Health: <span id="enemyHit"></span></p>
-              <p id="mHealthBar" class="card-text"></p>
-            </div>
-          </div>
+        <div class="leftWeapon" id="ninjaStar" hidden></div>
+      </div>
 
-          <div class="rightWeapon" id="ninjaStarRight" hidden></div>
+      <div class="col-sm-8" id="battlefield">
+        <div><img id="combatlogo" src="./assets/combatlogo.png" /></div>
+        <div>
+        <textarea id="textWindow" class="form-control" type="text" placeholder="The battle begins..." aria-label="readonly input example" hidden readonly>
+          </textarea>
+</div>
+        <div>
+          <button id="resetButton" onclick="resetGame()" type="button" class="btn btn-primary" hidden>
+
+            Thanks! Go Again
+          </button>
         </div>
       </div>
+
+      <div class="col-sm-2" id="rightBase">
+        <div class="card villainIntro" style="width: 18rem;" id="villainCard" hidden>
+          <img id="vilPhoto" class="card-img-top" src="./assets/monster1.jpg" alt="Card image cap" />
+
+          <div class="card-body">
+            <h5 id="mName" class="charName card-title"></h5>
+            <p id="mWeapName" class="card-text properName"></p>
+            <p class="card-text">Health: <span id="enemyHit"></span></p>
+            <p id="mHealthBar" class="card-text"></p>
+          </div>
+        </div>
+
+        <div class="rightWeapon" id="ninjaStarRight" hidden></div>
+      </div>
     </div>
+  </div>
 
-    <div id="pointer"></div>
+  <div id="pointer"></div>
 
-    <audio autoplay>
-      <source src="./assets/bell.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-    <script src="./scripts/bootstrap.bundle.min.js"></script>
-    <script src="./chars/chars.js"></script>
-    <script src="./scripts/main.js"></script>
-  </body>
+  <audio autoplay>
+    <source src="./assets/bell.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+  <script src="./scripts/bootstrap.bundle.min.js"></script>
+  <script src="./chars/chars.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+
 </html>

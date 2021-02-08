@@ -6,6 +6,7 @@ let charHit;
 let charDamage;
 let charPhoto = "";
 let character =[];
+let enemy = [];
 
 let monName = "";
 let mWeapon = "";
