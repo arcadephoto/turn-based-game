@@ -220,12 +220,17 @@ const players = [{
 
 
 function heroAttack() {
+  if(!fightOver) {
   document.getElementById('herocard').classList.add("hAttAnim");
   document.getElementById('herocard').classList.remove("cardIntro");
   document.getElementById('villainCard').classList.remove("vAttAnim");
   setTimeout(punchSound, 700);
   setTimeout(monsterAttack, 1500);
   setTimeout(battleSim, 3000);
+}
+else {
+  window.alert("The fight is over, fool!");
+}
 }
 
 function monsterAttack() {

@@ -9,7 +9,8 @@ let player2WeaponDamage = mDamage;
 let player1Hitpoints = charHit;
 let player2Hitpoints = mHit;
 let player1randomMissfire;
-let player2RandomMissfire;
+let player2randomMissfire;
+let fightOver = false;
 
 let battleSim = () => {
 
@@ -20,7 +21,6 @@ let battleSim = () => {
     if (player1randomMissfire > .5) {
       window.alert(`${charName} hit ${monName} for ${charDamage} points!`);
       mHit = (mHit - charDamage);
-      // console.log(`${monName} hit points: ${mHit}`);
     } else {
       window.alert(`${charName} missed!`);
     };
@@ -53,9 +53,15 @@ let battleSim = () => {
     }
     if (charHit <= 0) {
       window.alert("No! Evil has triumphed!");
+      document.getElementById('herocard').hidden = true;
+      fightOver = true;
+      return;
     }
     if (mHit <= 0) {
       window.alert("Whoa! Good actually beat evil for once!");
+      document.getElementById('villainCard').hidden = true;
+      fightOver = true;
+      return;
     }
   } else {
     window.alert("Sadly, this contest has concluded.");
@@ -105,8 +111,12 @@ function Enemy({
 }
 
 
-
-
+function startGame() {
+  window.alert("Welcome! Please press OK to continue");
+  document.getElementById('villainCard').hidden = false;
+  document.getElementById('heroDrop').hidden = false;
+}
+setTimeout(startGame, 1000);
 
 // battleSim();
 // })();
