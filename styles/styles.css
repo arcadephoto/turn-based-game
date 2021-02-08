@@ -249,4 +249,14 @@ font-size: x-large;
   font-weight: bold;
 }
 
+#textWindow{
+  position: absolute;
+  bottom: 20%;
+  right: 32%;
+  height: 300px;
+  width: 500px;
+  text-transform: capitalize;
+  overflow: auto;
+}
+
 /*# sourceMappingURL=anim.css.map */

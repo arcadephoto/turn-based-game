@@ -11,6 +11,7 @@ let player2Hitpoints = mHit;
 let player1randomMissfire;
 let player2randomMissfire;
 let fightOver = false;
+let textWindow = document.getElementById('textWindow');
 
 let battleSim = () => {
 
@@ -18,19 +19,20 @@ let battleSim = () => {
     player1randomMissfire = Math.random();
     player2randomMissfire = Math.random();
 
-    if (player1randomMissfire > .03) {
-      window.alert(`${charName} hit ${monName} for ${charDamage} points!`);
+    if (player1randomMissfire > .5) {
+      // window.alert(`${charName} hit ${monName} for ${charDamage} points!`);
+      textWindow.value = textWindow.value + `The ${charName} hit the ${monName} for ${charDamage} points!\n`;
       mHit = (mHit - charDamage);
     } else {
-      window.alert(`${charName} missed!`);
+      textWindow.value = textWindow.value + `The ${charName} missed!\n`;
     };
 
-    if (player2randomMissfire > .03) {
-      window.alert(`${monName} hit ${charName} for ${mDamage} points!`)
+    if (player2randomMissfire > .5) {
+      // window.alert(`${monName} hit ${charName} for ${mDamage} points!`);
+      textWindow.value = textWindow.value + `The ${monName} hit the ${charName} for ${mDamage} points!\n`;
       charHit = (charHit - mDamage);
-      console.log(`${charName} hit points: ${charHit}`);
     } else {
-      window.alert(`${monName} missed!`);
+      textWindow.value = textWindow.value + `The ${monName} missed!\n`;
     }
 
     heroLoseHealth();
@@ -52,21 +54,21 @@ let battleSim = () => {
       mHealthBar.style.width = `${mWidth}px`;
     }
     if (charHit <= 0) {
-      window.alert("No! Evil has triumphed!");
+      textWindow.value = textWindow.value + "No! Evil has triumphed!\n";
       document.getElementById('herocard').hidden = true;
       fightOver = true;
       document.getElementById('resetButton').hidden = false;
       return;
     }
     if (mHit <= 0) {
-      window.alert("Whoa! Good actually beat evil for once!");
+      textWindow.value = textWindow.value + "Whoa! Good actually beat evil for once!\n";
       document.getElementById('villainCard').hidden = true;
       fightOver = true;
       document.getElementById('resetButton').hidden = false;
       return;
     }
   } else {
-    window.alert("Sadly, this contest has concluded.");
+    textWindow.value = textWindow.value + "Sadly, this contest has concluded.\n";
   }
 }
 
@@ -75,6 +77,7 @@ let battleSim = () => {
 
 function doFight() {
   document.body.style.background = "url('./assets/landfight.jpg') center";
+  document.getElementById('textWindow').hidden = false;
   document.getElementById('herocard').hidden = false;
   document.getElementById('combatlogo').hidden = true;
   snd.play();
@@ -118,5 +121,3 @@ setTimeout(startGame, 1000);
 function resetGame(){
   location.reload();
 }
-// battleSim();
-// })();
