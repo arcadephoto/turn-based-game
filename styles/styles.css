@@ -256,7 +256,9 @@ font-size: x-large;
   text-transform: capitalize;
   overflow: auto;
   background-color: black !important;
+  border-radius: 6px;
+  border: 3px;
   color: green;
 }
 
-/*# sourceMappingURL=anim.css.map */
+# sourceMappingURL=anim.css.map
