@@ -15,8 +15,6 @@ body{
 .dropdown{
   position: relative;
 }
-
-
 .properName{
   text-transform: capitalize;
 }
@@ -257,6 +255,8 @@ font-size: x-large;
   width: 500px;
   text-transform: capitalize;
   overflow: auto;
+  background-color: black !important;
+  color: green;
 }
 
 /*# sourceMappingURL=anim.css.map */
