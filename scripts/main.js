@@ -20,7 +20,6 @@ let battleSim = () => {
     player2randomMissfire = Math.random();
 
     if (player1randomMissfire > .5) {
-      // window.alert(`${charName} hit ${monName} for ${charDamage} points!`);
       textWindow.value = textWindow.value + `The ${charName} hit the ${monName} for ${charDamage} points!\n`;
       mHit = (mHit - charDamage);
     } else {
@@ -28,7 +27,6 @@ let battleSim = () => {
     };
 
     if (player2randomMissfire > .5) {
-      // window.alert(`${monName} hit ${charName} for ${mDamage} points!`);
       textWindow.value = textWindow.value + `The ${monName} hit the ${charName} for ${mDamage} points!\n`;
       charHit = (charHit - mDamage);
     } else {
