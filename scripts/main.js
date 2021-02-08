@@ -112,7 +112,7 @@ let battleSim = () => {
     }
   })
 
-  if (player1Hitpoints <= 0) {
+  if (parseInt(player1Hitpoints) <= 0) {
     damage.innerHTML = "0";
   } else if(parseInt(player2Hitpoints) <= 0){
     enemyDamage.innerHTML = "0";
