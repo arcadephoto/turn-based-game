@@ -54,14 +54,14 @@ let battleSim = () => {
       mHealthBar.style.width = `${mWidth}px`;
     }
     if (charHit <= 0) {
-      textWindow.value = textWindow.value + "No! Evil has triumphed!\n";
+      textWindow.value = "No! Evil has triumphed!\n";
       document.getElementById('herocard').hidden = true;
       fightOver = true;
       document.getElementById('resetButton').hidden = false;
       return;
     }
     if (mHit <= 0) {
-      textWindow.value = textWindow.value + "THE GOOD GUYS WIN!\n";
+      textWindow.value = "THE GOOD GUYS WIN!\n";
       document.getElementById('villainCard').hidden = true;
       fightOver = true;
       document.getElementById('resetButton').hidden = false;
