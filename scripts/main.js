@@ -1,7 +1,3 @@
-// (function() {
-//   'use strict';
-
-
 var snd = new Audio("./assets/bell.mp3");
 
 
@@ -107,14 +103,6 @@ function Enemy({
   this.hitPoints = hitPoints;
   this.damage = damage;
 }
-/////type of character, name of attack, hit points,, attack name for weapon, damage
-// const characterOne = new Character("Wizard","Energy Blast","Staff","1000");
-// const characterTwo = new Character("Knight","Super Swing","Sword","1100");
-// const characterThree = new Character("Lizard Man","Tongue Attack","Tongue","1050");
-// const characterFour = new Character("Cowboy","unknown","Revolver","1200");
-
-// enemy = new Enemy({name: monName, weapon: mWeapon, hitpoints: mHit, damage: mDamage});
-// newCard = new Card({rank: r, suit: s, value: v, id: ids});
 
 
 
