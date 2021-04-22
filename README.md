@@ -1,4 +1,4 @@
-#Turn Based Game
+# Turn Based Game
 
 This code-school project, written in ReactJS, is a
 demonstration of simple battle code underneath
